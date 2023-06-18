@@ -7,76 +7,281 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE7D39BB2A35EAEA008A97D7 /* AccountKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D39BA2A35EAEA008A97D7 /* AccountKeeperApp.swift */; };
-		CE7D39BD2A35EAEA008A97D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D39BC2A35EAEA008A97D7 /* ContentView.swift */; };
-		CE7D39BF2A35EAEA008A97D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7D39BE2A35EAEA008A97D7 /* Assets.xcassets */; };
-		CE7D39C22A35EAEA008A97D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7D39C12A35EAEA008A97D7 /* Preview Assets.xcassets */; };
+		81904C4A4B3B69A7B9BE062B /* libPods-AccountKeeper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9A735CDDC85A54D45998DB /* libPods-AccountKeeper.a */; };
+		CE7D39E12A3C7657008A97D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D39E02A3C7657008A97D7 /* AppDelegate.swift */; };
+		CE7D39E82A3C7657008A97D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7D39E62A3C7657008A97D7 /* Main.storyboard */; };
+		CE7D39EA2A3C7659008A97D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7D39E92A3C7659008A97D7 /* Assets.xcassets */; };
+		CE7D39ED2A3C7659008A97D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7D39EB2A3C7659008A97D7 /* LaunchScreen.storyboard */; };
+		CE7D39F92A3C79D5008A97D7 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D39F82A3C79D5008A97D7 /* Assembler.swift */; };
+		CE7D39FC2A3CC07B008A97D7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D39FB2A3CC07B008A97D7 /* Notifications.swift */; };
+		CE7D3A002A3CC0D2008A97D7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D39FF2A3CC0D2008A97D7 /* Utils.swift */; };
+		CE7D3A0A2A3CC248008A97D7 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A092A3CC248008A97D7 /* ViewModel.swift */; };
+		CE7D3A102A3CC553008A97D7 /* AppAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A0B2A3CC552008A97D7 /* AppAssembler.swift */; };
+		CE7D3A112A3CC553008A97D7 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A0C2A3CC552008A97D7 /* AppNavigator.swift */; };
+		CE7D3A122A3CC553008A97D7 /* AppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A0D2A3CC553008A97D7 /* AppUseCase.swift */; };
+		CE7D3A142A3CC553008A97D7 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A0F2A3CC553008A97D7 /* AppViewModel.swift */; };
+		CE7D3A1A2A3CC58F008A97D7 /* MainAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A152A3CC58F008A97D7 /* MainAssembler.swift */; };
+		CE7D3A1B2A3CC58F008A97D7 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A162A3CC58F008A97D7 /* MainNavigator.swift */; };
+		CE7D3A1C2A3CC58F008A97D7 /* MainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A172A3CC58F008A97D7 /* MainUseCase.swift */; };
+		CE7D3A1D2A3CC58F008A97D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A182A3CC58F008A97D7 /* MainViewController.swift */; };
+		CE7D3A1E2A3CC58F008A97D7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A192A3CC58F008A97D7 /* MainViewModel.swift */; };
+		CE7D3A202A3CC5DF008A97D7 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A1F2A3CC5DF008A97D7 /* Storyboards.swift */; };
+		CE7D3A4C2A3D5A92008A97D7 /* Passcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7D3A4B2A3D5A92008A97D7 /* Passcode.storyboard */; };
+		CE7D3A582A3E0B43008A97D7 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A572A3E0B43008A97D7 /* UIApplication+.swift */; };
+		CE7D3A682A3E104A008A97D7 /* PasscodeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A632A3E104A008A97D7 /* PasscodeAssembler.swift */; };
+		CE7D3A692A3E104A008A97D7 /* PasscodeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A642A3E104A008A97D7 /* PasscodeNavigator.swift */; };
+		CE7D3A6A2A3E104A008A97D7 /* PasscodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A652A3E104A008A97D7 /* PasscodeUseCase.swift */; };
+		CE7D3A6B2A3E104A008A97D7 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A662A3E104A008A97D7 /* PasscodeViewController.swift */; };
+		CE7D3A6C2A3E104A008A97D7 /* PasscodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A672A3E104A008A97D7 /* PasscodeViewModel.swift */; };
+		CE7D3A6E2A3E1075008A97D7 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A6D2A3E1075008A97D7 /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE7D39B72A35EAEA008A97D7 /* AccountKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE7D39BA2A35EAEA008A97D7 /* AccountKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountKeeperApp.swift; sourceTree = "<group>"; };
-		CE7D39BC2A35EAEA008A97D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CE7D39BE2A35EAEA008A97D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE7D39C12A35EAEA008A97D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3E9A735CDDC85A54D45998DB /* libPods-AccountKeeper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AccountKeeper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		662B5510F2BA2A4B24725A9D /* Pods-AccountKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccountKeeper.release.xcconfig"; path = "Target Support Files/Pods-AccountKeeper/Pods-AccountKeeper.release.xcconfig"; sourceTree = "<group>"; };
+		CE7D39DD2A3C7657008A97D7 /* AccountKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7D39E02A3C7657008A97D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE7D39E72A3C7657008A97D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE7D39E92A3C7659008A97D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE7D39EC2A3C7659008A97D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE7D39EE2A3C7659008A97D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE7D39F82A3C79D5008A97D7 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
+		CE7D39FB2A3CC07B008A97D7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		CE7D39FF2A3CC0D2008A97D7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CE7D3A092A3CC248008A97D7 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		CE7D3A0B2A3CC552008A97D7 /* AppAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembler.swift; sourceTree = "<group>"; };
+		CE7D3A0C2A3CC552008A97D7 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
+		CE7D3A0D2A3CC553008A97D7 /* AppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUseCase.swift; sourceTree = "<group>"; };
+		CE7D3A0F2A3CC553008A97D7 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		CE7D3A152A3CC58F008A97D7 /* MainAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembler.swift; sourceTree = "<group>"; };
+		CE7D3A162A3CC58F008A97D7 /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
+		CE7D3A172A3CC58F008A97D7 /* MainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCase.swift; sourceTree = "<group>"; };
+		CE7D3A182A3CC58F008A97D7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CE7D3A192A3CC58F008A97D7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		CE7D3A1F2A3CC5DF008A97D7 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		CE7D3A4B2A3D5A92008A97D7 /* Passcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Passcode.storyboard; sourceTree = "<group>"; };
+		CE7D3A572A3E0B43008A97D7 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		CE7D3A632A3E104A008A97D7 /* PasscodeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeAssembler.swift; sourceTree = "<group>"; };
+		CE7D3A642A3E104A008A97D7 /* PasscodeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeNavigator.swift; sourceTree = "<group>"; };
+		CE7D3A652A3E104A008A97D7 /* PasscodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeUseCase.swift; sourceTree = "<group>"; };
+		CE7D3A662A3E104A008A97D7 /* PasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		CE7D3A672A3E104A008A97D7 /* PasscodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewModel.swift; sourceTree = "<group>"; };
+		CE7D3A6D2A3E1075008A97D7 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		FBC680A55D98D84F936A4B64 /* Pods-AccountKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccountKeeper.debug.xcconfig"; path = "Target Support Files/Pods-AccountKeeper/Pods-AccountKeeper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CE7D39B42A35EAEA008A97D7 /* Frameworks */ = {
+		CE7D39DA2A3C7657008A97D7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81904C4A4B3B69A7B9BE062B /* libPods-AccountKeeper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE7D39AE2A35EAE9008A97D7 = {
+		256732EAEAACAE569BD86D55 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CE7D39B92A35EAEA008A97D7 /* AccountKeeper */,
-				CE7D39B82A35EAEA008A97D7 /* Products */,
+				FBC680A55D98D84F936A4B64 /* Pods-AccountKeeper.debug.xcconfig */,
+				662B5510F2BA2A4B24725A9D /* Pods-AccountKeeper.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE7D39D42A3C7657008A97D7 = {
+			isa = PBXGroup;
+			children = (
+				CE7D39DF2A3C7657008A97D7 /* AccountKeeper */,
+				CE7D39DE2A3C7657008A97D7 /* Products */,
+				256732EAEAACAE569BD86D55 /* Pods */,
+				F9CDA45CB58EDBB932C3382E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		CE7D39B82A35EAEA008A97D7 /* Products */ = {
+		CE7D39DE2A3C7657008A97D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE7D39B72A35EAEA008A97D7 /* AccountKeeper.app */,
+				CE7D39DD2A3C7657008A97D7 /* AccountKeeper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE7D39B92A35EAEA008A97D7 /* AccountKeeper */ = {
+		CE7D39DF2A3C7657008A97D7 /* AccountKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				CE7D39BA2A35EAEA008A97D7 /* AccountKeeperApp.swift */,
-				CE7D39BC2A35EAEA008A97D7 /* ContentView.swift */,
-				CE7D39BE2A35EAEA008A97D7 /* Assets.xcassets */,
-				CE7D39C02A35EAEA008A97D7 /* Preview Content */,
+				CE7D39E02A3C7657008A97D7 /* AppDelegate.swift */,
+				CE7D39F82A3C79D5008A97D7 /* Assembler.swift */,
+				CE7D3A082A3CC1B4008A97D7 /* Resources */,
+				CE7D39FA2A3CC06F008A97D7 /* Config */,
+				CE7D39FD2A3CC0BA008A97D7 /* Support */,
+				CE7D3A012A3CC152008A97D7 /* Domain */,
+				CE7D3A042A3CC17B008A97D7 /* Data */,
+				CE7D39F42A3C7997008A97D7 /* Scenes */,
 			);
 			path = AccountKeeper;
 			sourceTree = "<group>";
 		};
-		CE7D39C02A35EAEA008A97D7 /* Preview Content */ = {
+		CE7D39F42A3C7997008A97D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CE7D39C12A35EAEA008A97D7 /* Preview Assets.xcassets */,
+				CE7D39F72A3C79B2008A97D7 /* Passcode */,
+				CE7D39F62A3C79AE008A97D7 /* Main */,
+				CE7D39F52A3C79A9008A97D7 /* App */,
 			);
-			path = "Preview Content";
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE7D39F52A3C79A9008A97D7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D3A0B2A3CC552008A97D7 /* AppAssembler.swift */,
+				CE7D3A0C2A3CC552008A97D7 /* AppNavigator.swift */,
+				CE7D3A0D2A3CC553008A97D7 /* AppUseCase.swift */,
+				CE7D3A0F2A3CC553008A97D7 /* AppViewModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CE7D39F62A3C79AE008A97D7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D3A152A3CC58F008A97D7 /* MainAssembler.swift */,
+				CE7D3A162A3CC58F008A97D7 /* MainNavigator.swift */,
+				CE7D3A172A3CC58F008A97D7 /* MainUseCase.swift */,
+				CE7D3A192A3CC58F008A97D7 /* MainViewModel.swift */,
+				CE7D3A182A3CC58F008A97D7 /* MainViewController.swift */,
+				CE7D39E62A3C7657008A97D7 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CE7D39F72A3C79B2008A97D7 /* Passcode */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D3A632A3E104A008A97D7 /* PasscodeAssembler.swift */,
+				CE7D3A642A3E104A008A97D7 /* PasscodeNavigator.swift */,
+				CE7D3A652A3E104A008A97D7 /* PasscodeUseCase.swift */,
+				CE7D3A672A3E104A008A97D7 /* PasscodeViewModel.swift */,
+				CE7D3A662A3E104A008A97D7 /* PasscodeViewController.swift */,
+				CE7D3A4B2A3D5A92008A97D7 /* Passcode.storyboard */,
+			);
+			path = Passcode;
+			sourceTree = "<group>";
+		};
+		CE7D39FA2A3CC06F008A97D7 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D39FB2A3CC07B008A97D7 /* Notifications.swift */,
+				CE7D3A092A3CC248008A97D7 /* ViewModel.swift */,
+				CE7D3A1F2A3CC5DF008A97D7 /* Storyboards.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		CE7D39FD2A3CC0BA008A97D7 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D39FE2A3CC0BE008A97D7 /* Extensions */,
+				CE7D39FF2A3CC0D2008A97D7 /* Utils.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		CE7D39FE2A3CC0BE008A97D7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D3A572A3E0B43008A97D7 /* UIApplication+.swift */,
+				CE7D3A6D2A3E1075008A97D7 /* UIViewController+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE7D3A012A3CC152008A97D7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D3A032A3CC162008A97D7 /* UseCases */,
+				CE7D3A022A3CC15D008A97D7 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CE7D3A022A3CC15D008A97D7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE7D3A032A3CC162008A97D7 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CE7D3A042A3CC17B008A97D7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D3A072A3CC1A1008A97D7 /* Realm */,
+				CE7D3A062A3CC196008A97D7 /* UserDefaults */,
+				CE7D3A052A3CC18A008A97D7 /* Gateways */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CE7D3A052A3CC18A008A97D7 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		CE7D3A062A3CC196008A97D7 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		CE7D3A072A3CC1A1008A97D7 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		CE7D3A082A3CC1B4008A97D7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D39EE2A3C7659008A97D7 /* Info.plist */,
+				CE7D39E92A3C7659008A97D7 /* Assets.xcassets */,
+				CE7D39EB2A3C7659008A97D7 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F9CDA45CB58EDBB932C3382E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E9A735CDDC85A54D45998DB /* libPods-AccountKeeper.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE7D39B62A35EAEA008A97D7 /* AccountKeeper */ = {
+		CE7D39DC2A3C7657008A97D7 /* AccountKeeper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE7D39C52A35EAEA008A97D7 /* Build configuration list for PBXNativeTarget "AccountKeeper" */;
+			buildConfigurationList = CE7D39F12A3C7659008A97D7 /* Build configuration list for PBXNativeTarget "AccountKeeper" */;
 			buildPhases = (
-				CE7D39B32A35EAEA008A97D7 /* Sources */,
-				CE7D39B42A35EAEA008A97D7 /* Frameworks */,
-				CE7D39B52A35EAEA008A97D7 /* Resources */,
+				84A2302DAE8237C95E8E0C80 /* [CP] Check Pods Manifest.lock */,
+				CE7D39D92A3C7657008A97D7 /* Sources */,
+				CE7D39DA2A3C7657008A97D7 /* Frameworks */,
+				CE7D39DB2A3C7657008A97D7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,25 +289,25 @@
 			);
 			name = AccountKeeper;
 			productName = AccountKeeper;
-			productReference = CE7D39B72A35EAEA008A97D7 /* AccountKeeper.app */;
+			productReference = CE7D39DD2A3C7657008A97D7 /* AccountKeeper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CE7D39AF2A35EAE9008A97D7 /* Project object */ = {
+		CE7D39D52A3C7657008A97D7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					CE7D39B62A35EAEA008A97D7 = {
+					CE7D39DC2A3C7657008A97D7 = {
 						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
-			buildConfigurationList = CE7D39B22A35EAE9008A97D7 /* Build configuration list for PBXProject "AccountKeeper" */;
+			buildConfigurationList = CE7D39D82A3C7657008A97D7 /* Build configuration list for PBXProject "AccountKeeper" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,42 +315,108 @@
 				en,
 				Base,
 			);
-			mainGroup = CE7D39AE2A35EAE9008A97D7;
-			productRefGroup = CE7D39B82A35EAEA008A97D7 /* Products */;
+			mainGroup = CE7D39D42A3C7657008A97D7;
+			productRefGroup = CE7D39DE2A3C7657008A97D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE7D39B62A35EAEA008A97D7 /* AccountKeeper */,
+				CE7D39DC2A3C7657008A97D7 /* AccountKeeper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CE7D39B52A35EAEA008A97D7 /* Resources */ = {
+		CE7D39DB2A3C7657008A97D7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7D39C22A35EAEA008A97D7 /* Preview Assets.xcassets in Resources */,
-				CE7D39BF2A35EAEA008A97D7 /* Assets.xcassets in Resources */,
+				CE7D3A4C2A3D5A92008A97D7 /* Passcode.storyboard in Resources */,
+				CE7D39ED2A3C7659008A97D7 /* LaunchScreen.storyboard in Resources */,
+				CE7D39EA2A3C7659008A97D7 /* Assets.xcassets in Resources */,
+				CE7D39E82A3C7657008A97D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		84A2302DAE8237C95E8E0C80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AccountKeeper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		CE7D39B32A35EAEA008A97D7 /* Sources */ = {
+		CE7D39D92A3C7657008A97D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7D39BD2A35EAEA008A97D7 /* ContentView.swift in Sources */,
-				CE7D39BB2A35EAEA008A97D7 /* AccountKeeperApp.swift in Sources */,
+				CE7D3A002A3CC0D2008A97D7 /* Utils.swift in Sources */,
+				CE7D3A692A3E104A008A97D7 /* PasscodeNavigator.swift in Sources */,
+				CE7D3A582A3E0B43008A97D7 /* UIApplication+.swift in Sources */,
+				CE7D3A1A2A3CC58F008A97D7 /* MainAssembler.swift in Sources */,
+				CE7D3A1C2A3CC58F008A97D7 /* MainUseCase.swift in Sources */,
+				CE7D3A112A3CC553008A97D7 /* AppNavigator.swift in Sources */,
+				CE7D3A1E2A3CC58F008A97D7 /* MainViewModel.swift in Sources */,
+				CE7D39FC2A3CC07B008A97D7 /* Notifications.swift in Sources */,
+				CE7D3A6E2A3E1075008A97D7 /* UIViewController+.swift in Sources */,
+				CE7D3A202A3CC5DF008A97D7 /* Storyboards.swift in Sources */,
+				CE7D3A682A3E104A008A97D7 /* PasscodeAssembler.swift in Sources */,
+				CE7D3A102A3CC553008A97D7 /* AppAssembler.swift in Sources */,
+				CE7D3A1D2A3CC58F008A97D7 /* MainViewController.swift in Sources */,
+				CE7D3A6B2A3E104A008A97D7 /* PasscodeViewController.swift in Sources */,
+				CE7D3A6C2A3E104A008A97D7 /* PasscodeViewModel.swift in Sources */,
+				CE7D39F92A3C79D5008A97D7 /* Assembler.swift in Sources */,
+				CE7D3A122A3CC553008A97D7 /* AppUseCase.swift in Sources */,
+				CE7D3A142A3CC553008A97D7 /* AppViewModel.swift in Sources */,
+				CE7D3A6A2A3E104A008A97D7 /* PasscodeUseCase.swift in Sources */,
+				CE7D3A0A2A3CC248008A97D7 /* ViewModel.swift in Sources */,
+				CE7D3A1B2A3CC58F008A97D7 /* MainNavigator.swift in Sources */,
+				CE7D39E12A3C7657008A97D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		CE7D39E62A3C7657008A97D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7D39E72A3C7657008A97D7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE7D39EB2A3C7659008A97D7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7D39EC2A3C7659008A97D7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		CE7D39C32A35EAEA008A97D7 /* Debug */ = {
+		CE7D39EF2A3C7659008A97D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -205,7 +476,7 @@
 			};
 			name = Debug;
 		};
-		CE7D39C42A35EAEA008A97D7 /* Release */ = {
+		CE7D39F02A3C7659008A97D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,20 +530,20 @@
 			};
 			name = Release;
 		};
-		CE7D39C62A35EAEA008A97D7 /* Debug */ = {
+		CE7D39F22A3C7659008A97D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBC680A55D98D84F936A4B64 /* Pods-AccountKeeper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AccountKeeper/Preview Content\"";
 				DEVELOPMENT_TEAM = 42BJ859V33;
-				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = AccountKeeper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -288,20 +559,20 @@
 			};
 			name = Debug;
 		};
-		CE7D39C72A35EAEA008A97D7 /* Release */ = {
+		CE7D39F32A3C7659008A97D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 662B5510F2BA2A4B24725A9D /* Pods-AccountKeeper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AccountKeeper/Preview Content\"";
 				DEVELOPMENT_TEAM = 42BJ859V33;
-				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = AccountKeeper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,25 +591,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE7D39B22A35EAE9008A97D7 /* Build configuration list for PBXProject "AccountKeeper" */ = {
+		CE7D39D82A3C7657008A97D7 /* Build configuration list for PBXProject "AccountKeeper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CE7D39C32A35EAEA008A97D7 /* Debug */,
-				CE7D39C42A35EAEA008A97D7 /* Release */,
+				CE7D39EF2A3C7659008A97D7 /* Debug */,
+				CE7D39F02A3C7659008A97D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE7D39C52A35EAEA008A97D7 /* Build configuration list for PBXNativeTarget "AccountKeeper" */ = {
+		CE7D39F12A3C7659008A97D7 /* Build configuration list for PBXNativeTarget "AccountKeeper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CE7D39C62A35EAEA008A97D7 /* Debug */,
-				CE7D39C72A35EAEA008A97D7 /* Release */,
+				CE7D39F22A3C7659008A97D7 /* Debug */,
+				CE7D39F32A3C7659008A97D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CE7D39AF2A35EAE9008A97D7 /* Project object */;
+	rootObject = CE7D39D52A3C7657008A97D7 /* Project object */;
 }
