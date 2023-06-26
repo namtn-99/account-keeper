@@ -1,0 +1,29 @@
+# 1
+input_dir:  AccountKeeper/
+# 2
+output_dir:  AccountKeeper/Generated/
+
+## XCAssets
+# 1
+xcassets:
+  # 2
+  inputs:
+    - Resources/Assets.xcassets
+  # 3
+  outputs:
+    # 4
+    templateName: swift5
+    # 5
+    output: XCAssets+Generated.swift
+
+## Strings
+strings:
+  inputs:
+    # 1
+    - Resources/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      # 2
+      params:
+        publicAccess: true
+      output: Strings+Generated.swift

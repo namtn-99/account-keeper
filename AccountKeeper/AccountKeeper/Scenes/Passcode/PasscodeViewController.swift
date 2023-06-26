@@ -22,6 +22,7 @@ enum PasscodeMode {
 final class PasscodeViewController: UIViewController, Bindable {
     
     // MARK: - IBOutlets
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private var inputViews: [UIView]!
     
     // MARK: - Properties
@@ -75,7 +76,7 @@ final class PasscodeViewController: UIViewController, Bindable {
     }
     
     private func configView() {
-        
+        titleLabel.text = L10n.Passcode.title
     }
     
     private func clearInput() {

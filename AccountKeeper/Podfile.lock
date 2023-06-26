@@ -20,6 +20,7 @@ PODS:
   - RxViewController (2.0.0):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
+  - SwiftGen (6.6.2)
   - Then (2.7.0)
 
 DEPENDENCIES:
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - RxViewController
+  - SwiftGen (~> 6.0)
   - Then (~> 2.7)
 
 SPEC REPOS:
@@ -43,6 +45,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - RxViewController
+    - SwiftGen
     - Then
 
 SPEC CHECKSUMS:
@@ -55,8 +58,9 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
+  SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: f0e2ce7ded79e11360b78047793bcabfd22256dd
+PODFILE CHECKSUM: e2f49d9bd3b927f97b02cfdf16db6f5563b98dcb
 
 COCOAPODS: 1.11.3
