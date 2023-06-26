@@ -1,6 +1,11 @@
 PODS:
   - MagicalRecord (2.3.0)
   - MBProgressHUD (1.2.0)
+  - Realm (10.39.1):
+    - Realm/Headers (= 10.39.1)
+  - Realm/Headers (10.39.1)
+  - RealmSwift (10.39.1):
+    - Realm (= 10.39.1)
   - Reusable (4.1.2):
     - Reusable/Storyboard (= 4.1.2)
     - Reusable/View (= 4.1.2)
@@ -20,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - MagicalRecord (= 2.3.0)
   - MBProgressHUD (~> 1.2)
+  - RealmSwift (~> 10)
   - Reusable (~> 4.1)
   - RxCocoa
   - RxSwift
@@ -30,6 +36,8 @@ SPEC REPOS:
   trunk:
     - MagicalRecord
     - MBProgressHUD
+    - Realm
+    - RealmSwift
     - Reusable
     - RxCocoa
     - RxRelay
@@ -40,6 +48,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  Realm: 1f3157edf145f4d9036765ab550c8cb18f62b700
+  RealmSwift: 8a69a1cb788cd5865966f49667b130567e07bceb
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -47,6 +57,6 @@ SPEC CHECKSUMS:
   RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 2ff575c1d41b7df2fe5f60d60465909bf17c1add
+PODFILE CHECKSUM: f0e2ce7ded79e11360b78047793bcabfd22256dd
 
 COCOAPODS: 1.11.3

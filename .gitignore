@@ -8,3 +8,5 @@ Pods/
 
 swiftlint-report.json
 .DS_Store
+
+xcuserdata/

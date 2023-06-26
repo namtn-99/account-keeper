@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  AccountKeeper
+
+  Created by NamTrinh on 26/06/2023.
+  
+*/
+
+// Home
+"name" = "Name";
+"username" = "Username";
+"password" = "Password";
+"qrCode" = "QR Code";
+
+// Passcode
+"passcode.title" = "Enter Passcode";

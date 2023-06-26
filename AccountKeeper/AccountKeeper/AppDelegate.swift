@@ -19,13 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidFinishLaunching(_ application: UIApplication) {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        bindViewModel()
+        AppSettings.passcodeEnable = true
+        bindViewModel(window: window)
     }
     
-    private func bindViewModel() {
-        let vm: AppViewModel = assembler.resolve(window: window!)
+    private func bindViewModel(window: UIWindow) {
+        let vm: AppViewModel = assembler.resolve(window: window)
         let input = AppViewModel.Input(load: Driver.just(()))
         _ = vm.transform(input, disposeBag: disposeBag)
     }
 }
-
