@@ -10,3 +10,5 @@ swiftlint-report.json
 .DS_Store
 
 xcuserdata/
+
+Generated/

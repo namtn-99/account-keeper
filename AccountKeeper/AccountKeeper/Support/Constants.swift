@@ -9,4 +9,6 @@ import Foundation
 
 enum Constants {
     static let maxLengthPasscode = 6
+    static let defaultLogoHeight: CGFloat = 55
+    static let largeLogoHeight: CGFloat = 100
 }

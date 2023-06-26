@@ -11,6 +11,7 @@ target 'AccountKeeper' do
     # Core
     pod 'Reusable', '~> 4.1'
     pod 'Then', '~> 2.7'
+    pod 'SwiftGen', '~> 6.0'
     
     # Others
     pod 'MagicalRecord', '2.3.0'

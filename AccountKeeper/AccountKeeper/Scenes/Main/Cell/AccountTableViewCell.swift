@@ -16,12 +16,25 @@ final class AccountTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var qrCodeLabel: UILabel!
+    @IBOutlet weak var usernameTitleLabel: UILabel!
+    @IBOutlet weak var nameTitleLabel: UILabel!
+    @IBOutlet weak var passwordTitleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var qrCodeTitleLabel: UILabel!
     var editSelected: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setUpView()
+    }
+    
+    private func setUpView() {
         selectionStyle = .none
+        nameTitleLabel.text = L10n.name
+        usernameTitleLabel.text = L10n.username
+        passwordTitleLabel.text = L10n.password
+        qrCodeTitleLabel.text = L10n.qrCode
     }
     
     @IBAction func handleEditButton(_ sender: UIButton) {

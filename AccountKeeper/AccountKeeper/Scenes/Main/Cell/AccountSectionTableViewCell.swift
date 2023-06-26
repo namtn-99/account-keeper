@@ -30,10 +30,10 @@ final class AccountSectionTableViewCell: UITableViewCell, NibReusable {
         UIView.animate(withDuration: 0.2,
                        delay: 0.1,
                        options: [.curveEaseInOut]) { [weak self] in
-            self?.logoHeightConstraints.constant = cellData.opened ? 100 : 55
+            self?.logoHeightConstraints.constant = cellData.opened ? Constants.largeLogoHeight : Constants.defaultLogoHeight
             self?.totalLabel.isHidden = cellData.opened
             self?.titleLabel.font = UIFont.systemFont(ofSize: cellData.opened ? 25 : 16)
-            self?.expandImageView.image = UIImage(named: cellData.opened ? "ic_expand_less" : "ic_expand_more")
+            self?.expandImageView.image = cellData.opened ? Asset.icExpandLess.image : Asset.icExpandMore.image
         }
     }
 }

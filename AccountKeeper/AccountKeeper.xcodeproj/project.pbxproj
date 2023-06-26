@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2C91CF7122A2A2BBCDD218FF /* Pods_AccountKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97662E33E0AF42F98A937556 /* Pods_AccountKeeper.framework */; };
 		CE2B0DE92A495AB200C0099B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE2B0DEB2A495AB200C0099B /* Localizable.strings */; };
+		CE2B0DEE2A4965CF00C0099B /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CE2B0DED2A4965CF00C0099B /* swiftgen.yml */; };
+		CE2B0DF32A4967B200C0099B /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0DF22A4967B200C0099B /* XCAssets+Generated.swift */; };
+		CE2B0DF52A4969B300C0099B /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0DF42A4969B300C0099B /* Strings+Generated.swift */; };
 		CE39BCB22A43603D00BCF90D /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BCB12A43603D00BCF90D /* KeychainManager.swift */; };
 		CE39BCB42A449C3E00BCF90D /* Realm+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BCB32A449C3E00BCF90D /* Realm+.swift */; };
 		CE4398902A46B80B00EEE16D /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43988F2A46B80B00EEE16D /* UIView+.swift */; };
@@ -66,6 +69,9 @@
 		CE2B0DE82A495A9000C0099B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
 		CE2B0DEA2A495AB200C0099B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE2B0DEC2A495AB600C0099B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE2B0DED2A4965CF00C0099B /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		CE2B0DF22A4967B200C0099B /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		CE2B0DF42A4969B300C0099B /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		CE39BCB12A43603D00BCF90D /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		CE39BCB32A449C3E00BCF90D /* Realm+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+.swift"; sourceTree = "<group>"; };
 		CE43988F2A46B80B00EEE16D /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -140,6 +146,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE2B0DF12A49675800C0099B /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B0DF42A4969B300C0099B /* Strings+Generated.swift */,
+				CE2B0DF22A4967B200C0099B /* XCAssets+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		CE39BCB02A43603200BCF90D /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +210,8 @@
 		CE7D39DF2A3C7657008A97D7 /* AccountKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				CE2B0DED2A4965CF00C0099B /* swiftgen.yml */,
+				CE2B0DF12A49675800C0099B /* Generated */,
 				CE7D39E02A3C7657008A97D7 /* AppDelegate.swift */,
 				CE7D39F82A3C79D5008A97D7 /* Assembler.swift */,
 				CE7D3A082A3CC1B4008A97D7 /* Resources */,
@@ -270,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7D39FE2A3CC0BE008A97D7 /* Extensions */,
+				CE4398A82A4882EF00EEE16D /* Constants.swift */,
 				CE7D39FF2A3CC0D2008A97D7 /* Utils.swift */,
 			);
 			path = Support;
@@ -283,7 +301,6 @@
 				CE39BCB32A449C3E00BCF90D /* Realm+.swift */,
 				CE43988F2A46B80B00EEE16D /* UIView+.swift */,
 				CE4398932A46C28400EEE16D /* UIColor+.swift */,
-				CE4398A82A4882EF00EEE16D /* Constants.swift */,
 				CE4398AA2A48922300EEE16D /* ObservableType+.swift */,
 			);
 			path = Extensions;
@@ -375,6 +392,7 @@
 			buildConfigurationList = CE7D39F12A3C7659008A97D7 /* Build configuration list for PBXNativeTarget "AccountKeeper" */;
 			buildPhases = (
 				84A2302DAE8237C95E8E0C80 /* [CP] Check Pods Manifest.lock */,
+				CE2B0DF02A49662100C0099B /* SwiftGen */,
 				CE7D39D92A3C7657008A97D7 /* Sources */,
 				CE7D39DA2A3C7657008A97D7 /* Frameworks */,
 				CE7D39DB2A3C7657008A97D7 /* Resources */,
@@ -429,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7D3A4C2A3D5A92008A97D7 /* Passcode.storyboard in Resources */,
+				CE2B0DEE2A4965CF00C0099B /* swiftgen.yml in Resources */,
 				CE60331C2A469FC9009333D8 /* AccountTableViewCell.xib in Resources */,
 				CE4398A72A48343F00EEE16D /* AddAccount.storyboard in Resources */,
 				CE43989A2A46C69300EEE16D /* AccountFooterView.xib in Resources */,
@@ -465,6 +484,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CE2B0DF02A49662100C0099B /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi \n";
+		};
 		CE7D3A782A435668008A97D7 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -497,6 +534,7 @@
 				CE7D3A692A3E104A008A97D7 /* PasscodeNavigator.swift in Sources */,
 				CE7D3A582A3E0B43008A97D7 /* UIApplication+.swift in Sources */,
 				CE7D3A1A2A3CC58F008A97D7 /* MainAssembler.swift in Sources */,
+				CE2B0DF32A4967B200C0099B /* XCAssets+Generated.swift in Sources */,
 				CE7D3A1C2A3CC58F008A97D7 /* MainUseCase.swift in Sources */,
 				CE7D3A722A3ED256008A97D7 /* Storage.swift in Sources */,
 				CE7D3A112A3CC553008A97D7 /* AppNavigator.swift in Sources */,
@@ -522,6 +560,7 @@
 				CE4398A12A48340F00EEE16D /* AddAccountAssembler.swift in Sources */,
 				CE7D3A6C2A3E104A008A97D7 /* PasscodeViewModel.swift in Sources */,
 				CE4398942A46C28400EEE16D /* UIColor+.swift in Sources */,
+				CE2B0DF52A4969B300C0099B /* Strings+Generated.swift in Sources */,
 				CE7D39F92A3C79D5008A97D7 /* Assembler.swift in Sources */,
 				CE7D3A122A3CC553008A97D7 /* AppUseCase.swift in Sources */,
 				CE7D3A142A3CC553008A97D7 /* AppViewModel.swift in Sources */,

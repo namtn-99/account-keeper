@@ -137,7 +137,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 12))
-        footerView.backgroundColor = UIColor(red: 217, green: 217, blue: 217)
+        footerView.backgroundColor = Asset.d9D9D9.color
         footerView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 8)
         return footerView
     }
