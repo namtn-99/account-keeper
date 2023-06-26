@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  AccountKeeper
+
+  Created by NamTrinh on 26/06/2023.
+  
+*/
+
+// Home
+"name" = "Tên";
+"username" = "Tài khoản";
+"password" = "Mật khẩu";
+"qrCode" = "Mã QR";
+
+// Passcode
+"passcode.title" = "Nhập mật khẩu";

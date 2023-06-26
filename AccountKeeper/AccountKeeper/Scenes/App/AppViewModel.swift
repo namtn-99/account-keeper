@@ -25,7 +25,13 @@ extension AppViewModel: ViewModel {
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
         input.load
-            .drive(onNext: self.navigator.toPasscode)
+            .drive(onNext: { _ in
+                if AppSettings.passcodeEnable {
+                    self.navigator.toPasscode()
+                } else {
+                    self.navigator.toMain()
+                }
+            })
             .disposed(by: disposeBag)
 
         return Output()

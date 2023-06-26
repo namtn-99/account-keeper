@@ -19,6 +19,6 @@ struct PasscodeNavigator: PasscodeNavigatorType {
         let nav = UINavigationController()
         let vc: MainViewController = assembler.resolve(navigationController: nav)
         nav.viewControllers.append(vc)
-        Utils.swapRootViewController(vc)
+        Utils.swapRootViewController(nav)
     }
 }

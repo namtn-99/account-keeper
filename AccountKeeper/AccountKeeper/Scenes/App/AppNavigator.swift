@@ -21,7 +21,7 @@ struct AppNavigator: AppNavigatorType {
         let vc: MainViewController = assembler.resolve(navigationController: nav)
         nav.viewControllers.append(vc)
         
-        window.rootViewController = vc
+        window.rootViewController = nav
         window.makeKeyAndVisible()
     }
     
@@ -30,7 +30,7 @@ struct AppNavigator: AppNavigatorType {
         let vc: PasscodeViewController = assembler.resolve(navigationController: nav)
         nav.viewControllers.append(vc)
         
-        window.rootViewController = vc
+        window.rootViewController = nav
         window.makeKeyAndVisible()
     }
 }

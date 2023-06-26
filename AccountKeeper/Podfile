@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
+use_frameworks! :linkage => :static
 
 target 'AccountKeeper' do
     # Rx
@@ -14,6 +15,9 @@ target 'AccountKeeper' do
     # Others
     pod 'MagicalRecord', '2.3.0'
     pod 'MBProgressHUD', '~> 1.2'
+    
+    # Database
+    pod 'RealmSwift', '~>10'
 
 end
 
