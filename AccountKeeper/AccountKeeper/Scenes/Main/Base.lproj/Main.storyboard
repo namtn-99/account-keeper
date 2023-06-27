@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -107,6 +108,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="ic_menu"/>
+                                        <connections>
+                                            <action selector="handleMenuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K20-gL-RJx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="hex27374D"/>
@@ -120,26 +124,56 @@
                                     <constraint firstItem="lHv-4h-SIl" firstAttribute="centerY" secondItem="z64-gy-xsu" secondAttribute="centerY" id="upj-dT-zxJ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVo-TW-lP7">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.30460778061224492" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6U-Ho-2Gz">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="844"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKj-J8-YVK">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="844"/>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uKj-J8-YVK" firstAttribute="leading" secondItem="g6U-Ho-2Gz" secondAttribute="leading" id="QV4-Yx-IV5"/>
+                                    <constraint firstAttribute="trailing" secondItem="uKj-J8-YVK" secondAttribute="trailing" id="XUX-1y-y6t"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="hex27374D"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="RN5-ai-B24" secondAttribute="bottom" id="0Ea-kb-jni"/>
+                            <constraint firstItem="g6U-Ho-2Gz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4ni-GM-QY9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="uKj-J8-YVK" secondAttribute="top" constant="47" id="8W5-do-0jk"/>
+                            <constraint firstItem="uKj-J8-YVK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="A8k-yU-EQB"/>
+                            <constraint firstAttribute="bottom" secondItem="DVo-TW-lP7" secondAttribute="bottom" id="IWI-2f-j6e"/>
+                            <constraint firstItem="DVo-TW-lP7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OCV-fO-lFf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RN5-ai-B24" secondAttribute="trailing" id="OEn-me-1Vh"/>
+                            <constraint firstItem="g6U-Ho-2Gz" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="PsB-Nu-iyq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z64-gy-xsu" secondAttribute="trailing" id="WTM-Bs-mmX"/>
                             <constraint firstItem="RN5-ai-B24" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YfO-YP-lPQ"/>
                             <constraint firstItem="z64-gy-xsu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bqS-iJ-xwm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DVo-TW-lP7" secondAttribute="trailing" id="j3o-iA-Uch"/>
+                            <constraint firstItem="g6U-Ho-2Gz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="2/3" id="nGB-Yi-nGR"/>
                             <constraint firstItem="z64-gy-xsu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uLn-6g-6hU"/>
                             <constraint firstItem="RN5-ai-B24" firstAttribute="top" secondItem="z64-gy-xsu" secondAttribute="bottom" id="w5d-LO-U3n"/>
+                            <constraint firstItem="DVo-TW-lP7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wH6-kO-vRu"/>
+                            <constraint firstItem="g6U-Ho-2Gz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="z33-me-h5j"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="accountsTableView" destination="HtJ-WA-QKe" id="Eiw-wp-XUq"/>
                         <outlet property="addButton" destination="lHv-4h-SIl" id="bid-tR-PER"/>
+                        <outlet property="blurMenuView" destination="DVo-TW-lP7" id="PMG-lM-lfz"/>
                         <outlet property="emptyImageView" destination="eDJ-Qf-tia" id="5oH-aT-rBA"/>
                         <outlet property="emptyTitleLabel" destination="sbw-ii-Clu" id="Afq-XI-0o0"/>
                         <outlet property="emptyView" destination="LFq-RR-cYv" id="pfB-od-I9m"/>
                         <outlet property="menuButton" destination="Cag-HJ-6nh" id="rKe-bf-lLb"/>
+                        <outlet property="menuView" destination="g6U-Ho-2Gz" id="5N4-9D-L0a"/>
+                        <outlet property="menuViewLeadingConstraint" destination="4ni-GM-QY9" id="cwI-fS-sGJ"/>
                         <outlet property="titleLabel" destination="PVE-3g-Oep" id="0kH-BE-9lr"/>
                     </connections>
                 </viewController>

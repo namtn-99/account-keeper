@@ -17,15 +17,21 @@ struct MainViewModel {
 extension MainViewModel: ViewModel {
     struct Input {
         let toAddAccountTrigger: Driver<Void>
+        let toSettingsTrigger: Driver<Void>
     }
     
     struct Output {
     }
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
-        let toAddAccount = input.toAddAccountTrigger
+        input.toAddAccountTrigger
             .drive(onNext: self.navigator.toAddAccount)
             .disposed(by: disposeBag)
+        
+        input.toSettingsTrigger
+            .drive(onNext: self.navigator.toSettings)
+            .disposed(by: disposeBag)
+        
         return Output()
     }
 }

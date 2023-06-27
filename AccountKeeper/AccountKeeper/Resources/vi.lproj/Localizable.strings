@@ -14,3 +14,14 @@
 
 // Passcode
 "passcode.title" = "Nhập mật khẩu";
+
+// Menu
+"menu.version" = "Phiên bản %@";
+"menu.support" = "Support";
+"menu.settings" = "Settings";
+
+// Action sheet
+"action.title" = "Chỉnh sửa tài khoản";
+"action.cancel" = "Thoát";
+"action.delete" = "Xoá";
+"action.edit" = "Chỉnh sửa";
