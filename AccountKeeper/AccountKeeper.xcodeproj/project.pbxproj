@@ -23,6 +23,11 @@
 		CE2B0E162A49993700C0099B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2B0E152A49993700C0099B /* Settings.storyboard */; };
 		CE2B0E1A2A499EC900C0099B /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E182A499EC900C0099B /* MenuTableViewCell.swift */; };
 		CE2B0E1B2A499EC900C0099B /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2B0E192A499EC900C0099B /* MenuTableViewCell.xib */; };
+		CE2B0E202A4AAD7C00C0099B /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E1E2A4AAD7C00C0099B /* SettingsTableViewCell.swift */; };
+		CE2B0E212A4AAD7C00C0099B /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2B0E1F2A4AAD7C00C0099B /* SettingsTableViewCell.xib */; };
+		CE2B0E232A4AC60800C0099B /* SettingsCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E222A4AC60800C0099B /* SettingsCellType.swift */; };
+		CE2B0E252A4ACF8300C0099B /* LAContext+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E242A4ACF8300C0099B /* LAContext+.swift */; };
+		CE2B0E272A4AE0D200C0099B /* PasscodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E262A4AE0D200C0099B /* PasscodEntity.swift */; };
 		CE39BCB22A43603D00BCF90D /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BCB12A43603D00BCF90D /* KeychainManager.swift */; };
 		CE39BCB42A449C3E00BCF90D /* Realm+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BCB32A449C3E00BCF90D /* Realm+.swift */; };
 		CE4398902A46B80B00EEE16D /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43988F2A46B80B00EEE16D /* UIView+.swift */; };
@@ -94,6 +99,11 @@
 		CE2B0E152A49993700C0099B /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CE2B0E182A499EC900C0099B /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		CE2B0E192A499EC900C0099B /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		CE2B0E1E2A4AAD7C00C0099B /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		CE2B0E1F2A4AAD7C00C0099B /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		CE2B0E222A4AC60800C0099B /* SettingsCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellType.swift; sourceTree = "<group>"; };
+		CE2B0E242A4ACF8300C0099B /* LAContext+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LAContext+.swift"; sourceTree = "<group>"; };
+		CE2B0E262A4AE0D200C0099B /* PasscodEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodEntity.swift; sourceTree = "<group>"; };
 		CE39BCB12A43603D00BCF90D /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		CE39BCB32A449C3E00BCF90D /* Realm+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+.swift"; sourceTree = "<group>"; };
 		CE43988F2A46B80B00EEE16D /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -190,6 +200,7 @@
 		CE2B0E0A2A49991F00C0099B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CE2B0E1D2A4AAD6F00C0099B /* Cell */,
 				CE2B0E0B2A49992E00C0099B /* SettingsAssembler.swift */,
 				CE2B0E0C2A49992E00C0099B /* SettingsNavigator.swift */,
 				CE2B0E0D2A49992E00C0099B /* SettingsUseCase.swift */,
@@ -205,6 +216,15 @@
 			children = (
 				CE2B0E182A499EC900C0099B /* MenuTableViewCell.swift */,
 				CE2B0E192A499EC900C0099B /* MenuTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE2B0E1D2A4AAD6F00C0099B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B0E1E2A4AAD7C00C0099B /* SettingsTableViewCell.swift */,
+				CE2B0E1F2A4AAD7C00C0099B /* SettingsTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -358,6 +378,7 @@
 				CE43988F2A46B80B00EEE16D /* UIView+.swift */,
 				CE4398932A46C28400EEE16D /* UIColor+.swift */,
 				CE4398AA2A48922300EEE16D /* ObservableType+.swift */,
+				CE2B0E242A4ACF8300C0099B /* LAContext+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,6 +397,8 @@
 			children = (
 				CE7D3A752A3EE94B008A97D7 /* Account.swift */,
 				CE2B0E032A49764E00C0099B /* MenuCellType.swift */,
+				CE2B0E222A4AC60800C0099B /* SettingsCellType.swift */,
+				CE2B0E262A4AE0D200C0099B /* PasscodEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -503,6 +526,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2B0E212A4AAD7C00C0099B /* SettingsTableViewCell.xib in Resources */,
 				CE7D3A4C2A3D5A92008A97D7 /* Passcode.storyboard in Resources */,
 				CE2B0E022A4973EA00C0099B /* SideMenu.storyboard in Resources */,
 				CE2B0DEE2A4965CF00C0099B /* swiftgen.yml in Resources */,
@@ -599,10 +623,12 @@
 				CE2B0DF32A4967B200C0099B /* XCAssets+Generated.swift in Sources */,
 				CE7D3A1C2A3CC58F008A97D7 /* MainUseCase.swift in Sources */,
 				CE7D3A722A3ED256008A97D7 /* Storage.swift in Sources */,
+				CE2B0E202A4AAD7C00C0099B /* SettingsTableViewCell.swift in Sources */,
 				CE7D3A112A3CC553008A97D7 /* AppNavigator.swift in Sources */,
 				CE7D3A1E2A3CC58F008A97D7 /* MainViewModel.swift in Sources */,
 				CE4398A32A48340F00EEE16D /* AddAccountUseCase.swift in Sources */,
 				CE60331B2A469FC9009333D8 /* AccountTableViewCell.swift in Sources */,
+				CE2B0E232A4AC60800C0099B /* SettingsCellType.swift in Sources */,
 				CE7D39FC2A3CC07B008A97D7 /* Notifications.swift in Sources */,
 				CE4398902A46B80B00EEE16D /* UIView+.swift in Sources */,
 				CE7D3A6E2A3E1075008A97D7 /* UIViewController+.swift in Sources */,
@@ -613,6 +639,7 @@
 				CE4398A42A48340F00EEE16D /* AddAccountViewController.swift in Sources */,
 				CE2B0E132A49992E00C0099B /* SettingsViewController.swift in Sources */,
 				CE2B0E1A2A499EC900C0099B /* MenuTableViewCell.swift in Sources */,
+				CE2B0E252A4ACF8300C0099B /* LAContext+.swift in Sources */,
 				CE7D3A702A3EB468008A97D7 /* AppSettings.swift in Sources */,
 				CE4398A92A4882EF00EEE16D /* Constants.swift in Sources */,
 				CE39BCB42A449C3E00BCF90D /* Realm+.swift in Sources */,
@@ -637,6 +664,7 @@
 				CE2B0DFF2A4973DE00C0099B /* SideMenuViewController.swift in Sources */,
 				CE7D39E12A3C7657008A97D7 /* AppDelegate.swift in Sources */,
 				CE7D3A742A3EE4E3008A97D7 /* RealmService.swift in Sources */,
+				CE2B0E272A4AE0D200C0099B /* PasscodEntity.swift in Sources */,
 				CE4398982A46C68900EEE16D /* AccountFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

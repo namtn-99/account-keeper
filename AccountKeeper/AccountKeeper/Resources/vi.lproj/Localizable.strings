@@ -25,3 +25,12 @@
 "action.cancel" = "Thoát";
 "action.delete" = "Xoá";
 "action.edit" = "Chỉnh sửa";
+
+// Settings
+"settings.security" = "Bảo mật";
+"settings.setupPasscode" = "Mật mã";
+"settings.turnPasscode.off" = "Tắt mật mã";
+"settings.turnPasscode.on" = "Bật mật mã";
+"settings.changePasscode" = "Đổi mật mã";
+"settings.faceId" = "Mở khoá với Face ID";
+"settings.touchId" = "Mở khoá với Touch ID";

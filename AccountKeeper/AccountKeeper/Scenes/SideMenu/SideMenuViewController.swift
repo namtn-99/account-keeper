@@ -51,8 +51,8 @@ final class SideMenuViewController: UIViewController {
     }
     
     private func configView() {
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        versionLabel.text = L10n.Menu.version(appVersion ?? "")
+        let appVersion = Bundle.main.releaseVersion ?? ""
+        versionLabel.text = L10n.Menu.version("\(appVersion)")
     }
     
     private func configTableView() {

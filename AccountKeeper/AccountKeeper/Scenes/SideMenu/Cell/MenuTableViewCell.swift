@@ -20,7 +20,7 @@ final class MenuTableViewCell: UITableViewCell, NibReusable {
         titleImageUIView.isHidden = true
     }
 
-    func configCell(data: SettingCellData) {
+    func configCell(data: MenuCellData) {
         if let icon = data.icon {
             titleImageUIView.isHidden = false
             titleImageView.image = icon

@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         AppSettings.passcodeEnable = false
+        AppSettings.passcodeEntity = PasscodeEntity()
         bindViewModel(window: window)
     }
     

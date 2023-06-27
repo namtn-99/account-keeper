@@ -22,11 +22,14 @@ final class SettingsViewController: UIViewController, Bindable {
     var viewModel: SettingsViewModel!
     var disposeBag = DisposeBag()
     
+    var settingsSections: [SettingsSection] = []
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        configTableView()
     }
     
     deinit {
@@ -43,13 +46,23 @@ final class SettingsViewController: UIViewController, Bindable {
         settingsTableView.do {
             $0.delegate = self
             $0.dataSource = self
-            
+            $0.register(cellType: SettingsTableViewCell.self)
+            $0.rowHeight = 60
         }
     }
     
     func bindViewModel() {
-        let input = SettingsViewModel.Input(dissmissTrigger: closeButton.rx.tap.asDriverOnErrorJustComplete())
+        let input = SettingsViewModel.Input(
+            loadTrigger: Driver.just(()),
+            dissmissTrigger: closeButton.rx.tap.asDriverOnErrorJustComplete())
         let output = viewModel.transform(input, disposeBag: disposeBag)
+        
+        output.settingsSections
+            .drive(onNext: { [weak self] settingsSections in
+                self?.settingsSections = settingsSections
+                self?.settingsTableView.reloadData()
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -65,11 +78,25 @@ extension SettingsViewController: StoryboardSceneBased {
 
 // MARK:
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return settingsSections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return settingsSections[section].cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: SettingsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.configCell(with: settingsSections[indexPath.section].cells[indexPath.row].getCellData())
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return settingsSections[section].type.title
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
     }
 }
