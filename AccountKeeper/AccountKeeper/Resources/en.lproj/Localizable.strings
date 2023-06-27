@@ -14,3 +14,14 @@
 
 // Passcode
 "passcode.title" = "Enter Passcode";
+
+// Menu
+"menu.version" = "Version %@";
+"menu.support" = "Support";
+"menu.settings" = "Settings";
+
+// Action sheet
+"action.title" = "Edit account";
+"action.cancel" = "Cancel";
+"action.delete" = "Delete";
+"action.edit" = "Edit";

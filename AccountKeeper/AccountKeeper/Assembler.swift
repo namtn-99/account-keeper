@@ -8,8 +8,9 @@
 protocol Assembler: AnyObject,
                     AppAssembler,
                     MainAssembler,
-                    PasscodeAssembler ,
-                    AddAccountAssembler {
+                    PasscodeAssembler,
+                    AddAccountAssembler,
+                    SettingsAssembler {
 }
 
 final class DefaultAssembler: Assembler {}

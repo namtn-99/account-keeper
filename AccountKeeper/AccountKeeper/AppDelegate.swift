@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidFinishLaunching(_ application: UIApplication) {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        AppSettings.passcodeEnable = true
+        AppSettings.passcodeEnable = false
         bindViewModel(window: window)
     }
     
