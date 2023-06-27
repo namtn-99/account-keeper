@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct SettingCellData {
+struct MenuCellData {
     enum CellMode {
         case disclosure
         case `switch`
@@ -24,12 +24,12 @@ enum MenuCellType {
     case support
     case settings
     
-    func getCellData() -> SettingCellData {
+    func getCellData() -> MenuCellData {
         switch self {
         case .settings:
-            return SettingCellData(icon: Asset.icSettings.image, title: L10n.Menu.settings, mode: .info)
+            return MenuCellData(icon: Asset.icSettings.image, title: L10n.Menu.settings, mode: .info)
         case .support:
-            return SettingCellData(icon: Asset.icSupport.image, title: L10n.Menu.support, mode: .info)
+            return MenuCellData(icon: Asset.icSupport.image, title: L10n.Menu.support, mode: .info)
         }
     }
 }

@@ -19,3 +19,20 @@ extension UIApplication {
         return nil
     }
 }
+
+extension Bundle {
+    var releaseVersion: String? {
+        return infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+
+    var buildNumber: Int? {
+        if let buildNumberString = infoDictionary?["CFBundleVersion"] as? String {
+            return Int(buildNumberString)
+        }
+        return nil
+    }
+
+    var nameApp: String {
+        return infoDictionary?["CFBundleDisplayName"] as? String ?? ""
+    }
+}

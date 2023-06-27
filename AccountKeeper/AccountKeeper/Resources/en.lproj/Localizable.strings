@@ -25,3 +25,12 @@
 "action.cancel" = "Cancel";
 "action.delete" = "Delete";
 "action.edit" = "Edit";
+
+// Settings
+"settings.security" = "Security";
+"settings.setupPasscode" = "Passcode";
+"settings.turnPasscode.off" = "Turn Passcode Off";
+"settings.turnPasscode.on" = "Turn Passcode On";
+"settings.changePasscode" = "Change Passcode";
+"settings.faceId" = "Unlock with Face ID";
+"settings.touchId" = "Unlock with Touch ID";
