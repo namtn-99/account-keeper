@@ -8,9 +8,6 @@
 import Foundation
 
 enum AppSettings {
-    @Storage(key: "passcodeEnable", defaultValue: false)
-    static var passcodeEnable: Bool
-    
     @Storage(key: "passcodeEntity", defaultValue: nil)
     static var passcodeEntity: PasscodeEntity?
     

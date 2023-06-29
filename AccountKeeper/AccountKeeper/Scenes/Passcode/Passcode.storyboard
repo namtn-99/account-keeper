@@ -258,7 +258,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3R-JU-xXg">
                                                 <rect key="frame" x="0.0" y="0.0" width="129.33333333333334" height="104.66666666666667"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUp-s0-aqo">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUp-s0-aqo">
                                                         <rect key="frame" x="44.666666666666657" y="32.333333333333258" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Bc8-Lu-dM7"/>
@@ -462,14 +462,14 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYz-RR-SAg">
-                                        <rect key="frame" x="112.66666666666669" y="117.00000000000001" width="165" height="28.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <rect key="frame" x="125.33333333333333" y="121.66666666666666" width="139.66666666666669" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong passcode!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9W-lT-iyC">
-                                        <rect key="frame" x="130" y="213.66666666666669" width="130" height="19.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <rect key="frame" x="137.33333333333334" y="213.66666666666669" width="115.66666666666666" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <color key="textColor" name="D64936"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -499,6 +499,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="biometricButton" destination="NUp-s0-aqo" id="7nQ-xO-LKR"/>
+                        <outlet property="errorTitleLabel" destination="m9W-lT-iyC" id="Ip6-Ie-wc5"/>
+                        <outlet property="inputStackView" destination="Hg3-0y-XMa" id="otS-bx-VUC"/>
                         <outlet property="titleLabel" destination="UYz-RR-SAg" id="N5V-UT-x7p"/>
                         <outletCollection property="inputViews" destination="Qk3-wv-dd8" collectionClass="NSMutableArray" id="m6o-vL-BAU"/>
                         <outletCollection property="inputViews" destination="hQy-W4-rGs" collectionClass="NSMutableArray" id="RAC-8L-2gm"/>

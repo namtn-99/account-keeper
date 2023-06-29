@@ -22,8 +22,10 @@ struct MainNavigator: MainNavigatorType {
     }
     
     func toSettings() {
-        let vc: SettingsViewController = assembler.resolve(navigationController: navigationController)
-        vc.modalPresentationStyle = .fullScreen
-        navigationController.viewControllers.first?.present(vc, animated: true)
+        let nav = UINavigationController()
+        let vc: SettingsViewController = assembler.resolve(navigationController: nav)
+        nav.viewControllers.append(vc)
+        nav.modalPresentationStyle = .fullScreen
+        navigationController.viewControllers.first?.present(nav, animated: true)
     }
 }

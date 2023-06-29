@@ -12,4 +12,9 @@ enum Constants {
     static let defaultLogoHeight: CGFloat = 55
     static let largeLogoHeight: CGFloat = 100
     static let widthMenuView = UIScreen.main.bounds.width * 2 / 3
+    
+    enum WindowLevel {
+        static let appVersionUpdatePopup: UIWindow.Level = .normal + 4
+        static let passcodeView: UIWindow.Level = .normal + 1
+    }
 }

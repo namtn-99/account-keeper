@@ -28,6 +28,7 @@
 		CE2B0E232A4AC60800C0099B /* SettingsCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E222A4AC60800C0099B /* SettingsCellType.swift */; };
 		CE2B0E252A4ACF8300C0099B /* LAContext+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E242A4ACF8300C0099B /* LAContext+.swift */; };
 		CE2B0E272A4AE0D200C0099B /* PasscodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E262A4AE0D200C0099B /* PasscodEntity.swift */; };
+		CE2B0E2B2A4DF6C100C0099B /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E2A2A4DF6C100C0099B /* WindowManager.swift */; };
 		CE39BCB22A43603D00BCF90D /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BCB12A43603D00BCF90D /* KeychainManager.swift */; };
 		CE39BCB42A449C3E00BCF90D /* Realm+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BCB32A449C3E00BCF90D /* Realm+.swift */; };
 		CE4398902A46B80B00EEE16D /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43988F2A46B80B00EEE16D /* UIView+.swift */; };
@@ -104,6 +105,7 @@
 		CE2B0E222A4AC60800C0099B /* SettingsCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellType.swift; sourceTree = "<group>"; };
 		CE2B0E242A4ACF8300C0099B /* LAContext+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LAContext+.swift"; sourceTree = "<group>"; };
 		CE2B0E262A4AE0D200C0099B /* PasscodEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodEntity.swift; sourceTree = "<group>"; };
+		CE2B0E2A2A4DF6C100C0099B /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		CE39BCB12A43603D00BCF90D /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		CE39BCB32A449C3E00BCF90D /* Realm+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+.swift"; sourceTree = "<group>"; };
 		CE43988F2A46B80B00EEE16D /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -204,8 +206,8 @@
 				CE2B0E0B2A49992E00C0099B /* SettingsAssembler.swift */,
 				CE2B0E0C2A49992E00C0099B /* SettingsNavigator.swift */,
 				CE2B0E0D2A49992E00C0099B /* SettingsUseCase.swift */,
-				CE2B0E0E2A49992E00C0099B /* SettingsViewController.swift */,
 				CE2B0E0F2A49992E00C0099B /* SettingsViewModel.swift */,
+				CE2B0E0E2A49992E00C0099B /* SettingsViewController.swift */,
 				CE2B0E152A49993700C0099B /* Settings.storyboard */,
 			);
 			path = Settings;
@@ -365,6 +367,7 @@
 				CE7D39FE2A3CC0BE008A97D7 /* Extensions */,
 				CE4398A82A4882EF00EEE16D /* Constants.swift */,
 				CE7D39FF2A3CC0D2008A97D7 /* Utils.swift */,
+				CE2B0E2A2A4DF6C100C0099B /* WindowManager.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				CE4398AB2A48922300EEE16D /* ObservableType+.swift in Sources */,
 				CE7D3A6B2A3E104A008A97D7 /* PasscodeViewController.swift in Sources */,
 				CE4398A12A48340F00EEE16D /* AddAccountAssembler.swift in Sources */,
+				CE2B0E2B2A4DF6C100C0099B /* WindowManager.swift in Sources */,
 				CE7D3A6C2A3E104A008A97D7 /* PasscodeViewModel.swift in Sources */,
 				CE4398942A46C28400EEE16D /* UIColor+.swift in Sources */,
 				CE2B0DF52A4969B300C0099B /* Strings+Generated.swift in Sources */,

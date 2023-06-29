@@ -19,14 +19,20 @@ extension SettingsViewModel: ViewModel {
     struct Input {
         let loadTrigger: Driver<Void>
         let dissmissTrigger: Driver<Void>
+        let actionTrigger: Driver<SettingsCellType>
+        let turnOffPasscode: Driver<Void>
     }
     
     struct Output {
         let settingsSections: Driver<[SettingsSection]>
+        let confirmTurnOffPasscode: Driver<Void>
+        let reload: Driver<Void>
     }
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
         let settingsSections = BehaviorSubject<[SettingsSection]>(value: [])
+        let confirmTurnOffPasscode = PublishSubject<Void>()
+        let reloadSubject = PublishSubject<Void>()
         
         input.dissmissTrigger
             .drive(onNext: self.navigator.dissmiss)
@@ -39,7 +45,37 @@ extension SettingsViewModel: ViewModel {
             })
             .disposed(by: disposeBag)
         
-        return Output(settingsSections: settingsSections.asDriverOnErrorJustComplete())
+        input.actionTrigger
+            .drive(onNext: { settingsCellType in
+                switch settingsCellType {
+                case .turnPasscodeOn:
+                    self.navigator.toCreatePasscode()
+                case  .turnPasscodeOff:
+                    confirmTurnOffPasscode.onNext(())
+                case .unlockWithFaceId(let isOn):
+                    self.useCase.unlockWithFaceId(isOn: isOn)
+                case .unlockWithTouchId(let isOn):
+                    self.useCase.unlockWithTouchId(isOn: isOn)
+                case .changePasscode:
+                    self.navigator.toChangePasscode()
+                default:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        input.turnOffPasscode
+            .drive(onNext: {
+                self.useCase.turnPasscodeOff()
+                reloadSubject.onNext(())
+            })
+            .disposed(by: disposeBag)
+        
+        return Output(
+            settingsSections: settingsSections.asDriverOnErrorJustComplete(),
+            confirmTurnOffPasscode: confirmTurnOffPasscode.asDriverOnErrorJustComplete(),
+            reload: reloadSubject.asDriverOnErrorJustComplete()
+        )
     }
 }
 

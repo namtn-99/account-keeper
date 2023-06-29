@@ -15,14 +15,18 @@ enum PasscodeMode {
     case new
     case change
     case verify
-    case confirm
+    case confirmChange
+    case confirmNew
     case unlock
 }
 
 final class PasscodeViewController: UIViewController, Bindable {
     
     // MARK: - IBOutlets
+    @IBOutlet private weak var biometricButton: UIButton!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var errorTitleLabel: UILabel!
+    @IBOutlet private weak var inputStackView: UIStackView!
     @IBOutlet private var inputViews: [UIView]!
     
     // MARK: - Properties
@@ -43,7 +47,7 @@ final class PasscodeViewController: UIViewController, Bindable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     deinit {
@@ -52,17 +56,18 @@ final class PasscodeViewController: UIViewController, Bindable {
     
     // MARK: - Methods
     @IBAction func handleNumberButton(_ sender: UIButton) {
+        if passcode.count == Constants.maxLengthPasscode {
+            return
+        }
         clearInput()
+        errorTitleLabel.text = ""
         passcode += sender.titleLabel?.text ?? ""
         if passcode.count == Constants.maxLengthPasscode {
             passcodeTrigger.onNext(passcode)
-            return
         }
         for i in 0 ..< passcode.count {
             inputViews[i].backgroundColor = UIColor.init(hexString: "#526D82")
         }
-        
-        print(passcode)
     }
     
     @IBAction func handleDeleteButton(_ sender: UIButton) {
@@ -76,7 +81,21 @@ final class PasscodeViewController: UIViewController, Bindable {
     }
     
     private func configView() {
-        titleLabel.text = L10n.Passcode.title
+        errorTitleLabel.text = ""
+        switch viewModel.mode {
+        case .new:
+            titleLabel.text = L10n.Passcode.Title.new
+        case .change:
+            titleLabel.text = L10n.Passcode.Title.change
+        case .confirmChange:
+            titleLabel.text = L10n.Passcode.Title.Change.verify
+        case .confirmNew:
+            titleLabel.text = L10n.Passcode.Title.verify
+        case .verify:
+            titleLabel.text = L10n.Passcode.Title.verify
+        case .unlock:
+            titleLabel.text = L10n.Passcode.title
+        }
     }
     
     private func clearInput() {
@@ -86,6 +105,18 @@ final class PasscodeViewController: UIViewController, Bindable {
     func bindViewModel() {
         let input = PasscodeViewModel.Input(passcodeTrigger: passcodeTrigger.asDriverOnErrorJustComplete())
         let output = viewModel.transform(input, disposeBag: disposeBag)
+        
+        output.error
+            .drive(onNext: { [weak self] error in
+                if let error = error {
+                    self?.errorTitleLabel.text = error.description
+                    self?.errorTitleLabel.isHidden = false
+                    self?.springErrorAnimation()
+                    self?.passcode = ""
+                    self?.clearInput()
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -97,4 +128,14 @@ extension PasscodeViewController {
 // MARK: - StoryboardSceneBased
 extension PasscodeViewController: StoryboardSceneBased {
     static var sceneStoryboard = Storyboards.passcode
+}
+
+extension PasscodeViewController {
+    func springErrorAnimation() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.duration = 0.5
+        animation.values = [-15, 15, -12, 12, -10, 10, -5, 5, 0]
+        inputStackView.layer.add(animation, forKey: "shake")
+    }
 }
