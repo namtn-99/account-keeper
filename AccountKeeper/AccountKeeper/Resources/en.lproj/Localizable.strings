@@ -13,7 +13,13 @@
 "qrCode" = "QR Code";
 
 // Passcode
-"passcode.title" = "Enter Passcode";
+"passcode.title" = "Enter your passcode";
+"passcode.title.new" = "Enter a passcode";
+"passcode.title.verify" = "Re-enter your passcode";
+"passcode.title.change" = "Enter your new passcode";
+"passcode.title.change.verify" = "Re-enter your new passcode";
+"passcode.error.wrong" = "Wrong passcode!";
+"passcode.error.change.verify" = "Passcode don't match. Please try again.";
 
 // Menu
 "menu.version" = "Version %@";
@@ -27,7 +33,9 @@
 "action.edit" = "Edit";
 
 // Settings
+"settings.title" = "Settings";
 "settings.security" = "Security";
+"settings.security.note" = "Note: If you forget your passcode, you'll need to reinstall the app. All your Secret Accounts will be lost.";
 "settings.setupPasscode" = "Passcode";
 "settings.turnPasscode.off" = "Turn Passcode Off";
 "settings.turnPasscode.on" = "Turn Passcode On";

@@ -22,6 +22,13 @@ enum SettingsSectionType {
             return L10n.Settings.security
         }
     }
+    
+    var note: String {
+        switch self {
+        case .security:
+            return L10n.Settings.Security.note
+        }
+    }
 }
 
 struct SettingsCellData {
@@ -50,7 +57,7 @@ enum SettingsCellType {
         case .turnPasscodeOn:
             return SettingsCellData(icon: Asset.icSecurity.image, title: L10n.Settings.TurnPasscode.on, mode: .disclosure)
         case .turnPasscodeOff:
-            return SettingsCellData(icon: nil, title: L10n.Settings.TurnPasscode.off, mode: .disclosure)
+            return SettingsCellData(icon: nil, title: L10n.Settings.TurnPasscode.off, mode: .info)
         case .changePasscode:
             return SettingsCellData(icon: nil, title: L10n.Settings.changePasscode, mode: .disclosure)
         case .unlockWithFaceId(let isOn):

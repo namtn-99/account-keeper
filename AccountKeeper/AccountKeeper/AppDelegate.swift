@@ -19,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidFinishLaunching(_ application: UIApplication) {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        AppSettings.passcodeEnable = false
-        AppSettings.passcodeEntity = PasscodeEntity()
         bindViewModel(window: window)
     }
     
@@ -28,5 +26,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vm: AppViewModel = assembler.resolve(window: window)
         let input = AppViewModel.Input(load: Driver.just(()))
         _ = vm.transform(input, disposeBag: disposeBag)
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        let blurEffect = UIBlurEffect(style: .regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = window!.frame
+        blurEffectView.tag = 1
+        self.window?.addSubview(blurEffectView)
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        self.window?.viewWithTag(1)?.removeFromSuperview()
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        presentPasscode()
+    }
+    
+    private func presentPasscode() {
+        let passcodeVC: PasscodeViewController = assembler.resolve(navigationController: UINavigationController(),
+                                                                   mode: .verify)
+        WindowManager.shared.rootViewController = passcodeVC
+        WindowManager.shared.isHidden = false
     }
 }

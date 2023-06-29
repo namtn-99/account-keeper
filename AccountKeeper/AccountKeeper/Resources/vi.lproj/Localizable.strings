@@ -13,12 +13,18 @@
 "qrCode" = "Mã QR";
 
 // Passcode
-"passcode.title" = "Nhập mật khẩu";
+"passcode.title" = "Nhập mật mã của bạn";
+"passcode.title.new" = "Nhập một mật mã";
+"passcode.title.verify" = "Nhập lại mật mã của bạn";
+"passcode.title.change" = "Nhập mật mã mới của bạn";
+"passcode.title.change.verify" = "Nhập lại mật mã mới của bạn";
+"passcode.error.wrong" = "Sai mật mã!";
+"passcode.error.change.verify" = "Mật mã không khớp. Hãy thử lại.";
 
 // Menu
 "menu.version" = "Phiên bản %@";
-"menu.support" = "Support";
-"menu.settings" = "Settings";
+"menu.support" = "Hỗ trợ";
+"menu.settings" = "Cài đặt";
 
 // Action sheet
 "action.title" = "Chỉnh sửa tài khoản";
@@ -27,7 +33,9 @@
 "action.edit" = "Chỉnh sửa";
 
 // Settings
+"settings.title" = "Cài đặt";
 "settings.security" = "Bảo mật";
+"settings.security.note" = "Lưu ý: Nếu bạn quên mật mã, bạn sẽ phải cài đặt lại ứng dụng. Tất cả các tài khoản bí mật của bạn sẽ bị mất.";
 "settings.setupPasscode" = "Mật mã";
 "settings.turnPasscode.off" = "Tắt mật mã";
 "settings.turnPasscode.on" = "Bật mật mã";

@@ -9,6 +9,8 @@ import UIKit
 
 protocol SettingsNavigatorType {
     func dissmiss()
+    func toCreatePasscode()
+    func toChangePasscode()
 }
 
 struct SettingsNavigator: SettingsNavigatorType {
@@ -17,5 +19,15 @@ struct SettingsNavigator: SettingsNavigatorType {
     
     func dissmiss() {
         navigationController.dismiss(animated: true)
+    }
+    
+    func toCreatePasscode() {
+        let vc: PasscodeViewController = assembler.resolve(navigationController: navigationController, mode: .new)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func toChangePasscode() {
+        let vc: PasscodeViewController = assembler.resolve(navigationController: navigationController, mode: .change)
+        navigationController.pushViewController(vc, animated: true)
     }
 }

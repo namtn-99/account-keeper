@@ -14,13 +14,18 @@ import Then
 final class SettingsViewController: UIViewController, Bindable {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var settingsTableView: UITableView!
-    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet private weak var settingsTableView: UITableView!
+    @IBOutlet private weak var closeButton: UIButton!
+    @IBOutlet private weak var titleLabel: UILabel!
     
     // MARK: - Properties
     
     var viewModel: SettingsViewModel!
     var disposeBag = DisposeBag()
+    
+    private let actionTrigger = PublishSubject<SettingsCellType>()
+    private let loadTrigger = PublishSubject<Void>()
+    private let turnOffPasscodeTrigger = PublishSubject<Void>()
     
     var settingsSections: [SettingsSection] = []
     
@@ -32,6 +37,12 @@ final class SettingsViewController: UIViewController, Bindable {
         configTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadTrigger.onNext(())
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     deinit {
         logDeinit()
     }
@@ -39,7 +50,7 @@ final class SettingsViewController: UIViewController, Bindable {
     // MARK: - Methods
     
     private func configView() {
-        
+        titleLabel.text = L10n.Settings.title
     }
     
     private func configTableView() {
@@ -53,8 +64,11 @@ final class SettingsViewController: UIViewController, Bindable {
     
     func bindViewModel() {
         let input = SettingsViewModel.Input(
-            loadTrigger: Driver.just(()),
-            dissmissTrigger: closeButton.rx.tap.asDriverOnErrorJustComplete())
+            loadTrigger: loadTrigger.asDriverOnErrorJustComplete(),
+            dissmissTrigger: closeButton.rx.tap.asDriverOnErrorJustComplete(),
+            actionTrigger: actionTrigger.asDriverOnErrorJustComplete(),
+            turnOffPasscode: turnOffPasscodeTrigger.asDriverOnErrorJustComplete()
+        )
         let output = viewModel.transform(input, disposeBag: disposeBag)
         
         output.settingsSections
@@ -63,6 +77,20 @@ final class SettingsViewController: UIViewController, Bindable {
                 self?.settingsTableView.reloadData()
             })
             .disposed(by: disposeBag)
+        
+        output.reload
+            .drive(onNext: { [weak self] _ in
+                self?.loadTrigger.onNext(())
+            })
+            .disposed(by: disposeBag)
+        
+        output.confirmTurnOffPasscode
+            .drive(onNext: { [weak self] _ in
+                self?.showConfirmOffPasscode()
+            })
+            .disposed(by: disposeBag)
+        
+        loadTrigger.onNext(())
     }
 }
 
@@ -96,7 +124,32 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         return settingsSections[section].type.title
     }
     
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return settingsSections[section].type.note
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        actionTrigger.onNext(settingsSections[indexPath.section].cells[indexPath.row])
+    }
+}
+
+extension SettingsViewController {
+    func showConfirmOffPasscode() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: L10n.Action.cancel, style: .cancel)
+        let deleteAction = UIAlertAction(title: L10n.Settings.TurnPasscode.off, style: .destructive, handler: { [weak self] _ in
+            self?.turnOffPasscodeTrigger.onNext(())
+        })
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }

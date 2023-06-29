@@ -24,6 +24,11 @@ final class SettingsTableViewCell: UITableViewCell, NibReusable {
         iconView.isHidden = true
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconView.isHidden = true
+    }
+    
     func configCell(with data: SettingsCellData) {
         if let icon = data.icon {
             iconImageView.image = icon

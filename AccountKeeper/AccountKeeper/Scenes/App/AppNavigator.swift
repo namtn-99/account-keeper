@@ -27,7 +27,7 @@ struct AppNavigator: AppNavigatorType {
     
     func toPasscode() {
         let nav = UINavigationController()
-        let vc: PasscodeViewController = assembler.resolve(navigationController: nav)
+        let vc: PasscodeViewController = assembler.resolve(navigationController: nav, mode: .unlock)
         nav.viewControllers.append(vc)
         
         window.rootViewController = nav
