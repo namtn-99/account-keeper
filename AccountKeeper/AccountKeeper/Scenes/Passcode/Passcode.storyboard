@@ -270,6 +270,9 @@
                                                             <color key="titleColor" name="1E1E1E"/>
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="handleBiometricButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Tp5-yO-0m4"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" name="D9D9D9"/>

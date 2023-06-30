@@ -21,6 +21,7 @@ extension SettingsViewModel: ViewModel {
         let dissmissTrigger: Driver<Void>
         let actionTrigger: Driver<SettingsCellType>
         let turnOffPasscode: Driver<Void>
+        let biometricSettings: Driver<Bool>
     }
     
     struct Output {
@@ -71,6 +72,19 @@ extension SettingsViewModel: ViewModel {
             })
             .disposed(by: disposeBag)
         
+        input.biometricSettings
+            .drive(onNext: { isOn in
+                switch LAContext().biometricType {
+                case .faceID:
+                    useCase.unlockWithFaceId(isOn: isOn)
+                case .touchID:
+                    useCase.unlockWithTouchId(isOn: isOn)
+                default:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
+        
         return Output(
             settingsSections: settingsSections.asDriverOnErrorJustComplete(),
             confirmTurnOffPasscode: confirmTurnOffPasscode.asDriverOnErrorJustComplete(),
@@ -92,12 +106,11 @@ extension SettingsViewModel {
             case .faceID:
                 securityCells.append(.unlockWithFaceId(AppSettings.passcodeEnableFaceId))
             case .touchID:
-                securityCells.append(.unlockWithFaceId(AppSettings.passcodeEnableTouchId))
+                securityCells.append(.unlockWithTouchId(AppSettings.passcodeEnableTouchId))
             default:
                 break
             }
         }
-        
         return [SettingsSection(type: .security, cells: securityCells)]
     }
 }

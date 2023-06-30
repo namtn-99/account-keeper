@@ -42,3 +42,7 @@
 "settings.changePasscode" = "Change Passcode";
 "settings.faceId" = "Unlock with Face ID";
 "settings.touchId" = "Unlock with Touch ID";
+"settings.popup.cancel" = "Cancel";
+"settings.popup.settings" = "Settings";
+"settings.popup.goToSettings" = "Go to settings";
+"settings.popup.requestPremission" = "You need permission to enable this function.";

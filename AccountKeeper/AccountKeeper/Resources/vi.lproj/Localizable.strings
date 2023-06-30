@@ -42,3 +42,7 @@
 "settings.changePasscode" = "Đổi mật mã";
 "settings.faceId" = "Mở khoá với Face ID";
 "settings.touchId" = "Mở khoá với Touch ID";
+"settings.popup.cancel" = "Thoát";
+"settings.popup.settings" = "Cài đặt";
+"settings.popup.goToSettings" = "Đi tới cài đặt";
+"settings.popup.requestPremission" = "Bạn cần cấp quyển để có thể bật chức năng này.";

@@ -15,27 +15,28 @@ extension LAContext {
         case touchID
         case faceID
     }
-
+    
     var biometricType: BiometricType {
-        var error: NSError?
-
-        guard self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+        let authenticationContext = LAContext()
+        _ = authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        switch (authenticationContext.biometryType){
+        case .faceID:
+            return .faceID
+        case .touchID:
+            return .touchID
+        default:
             return .none
         }
-
-        if #available(iOS 11.0, *) {
-            switch self.biometryType {
-            case .none:
-                return .none
-            case .touchID:
-                return .touchID
-            case .faceID:
-                return .faceID
-            @unknown default:
-                #warning("Handle new Biometric type")
-            }
-        }
+    }
+    
+    var isPremissionBiometric: Bool {
+        let context = LAContext()
+        var error: NSError?
         
-        return  self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ? .touchID : .none
+        let permissions = context.canEvaluatePolicy(
+            .deviceOwnerAuthenticationWithBiometrics,
+            error: &error
+        )
+        return permissions
     }
 }

@@ -833,6 +833,7 @@
 				DEVELOPMENT_TEAM = 42BJ859V33;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AccountKeeper/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please allow to continue with FaceID of TouchID";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -863,6 +864,7 @@
 				DEVELOPMENT_TEAM = 42BJ859V33;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AccountKeeper/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please allow to continue with FaceID of TouchID";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

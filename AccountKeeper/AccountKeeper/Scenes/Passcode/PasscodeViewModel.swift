@@ -7,6 +7,7 @@
 
 import RxSwift
 import RxCocoa
+import LocalAuthentication
 
 enum PasscodeError: Error {
     case wrongPasscode
@@ -33,14 +34,18 @@ struct PasscodeViewModel {
 extension PasscodeViewModel: ViewModel {
     struct Input {
         let passcodeTrigger: Driver<String>
+        let loadTrigger: Driver<Void>
+        let unlockWithBiometric: Driver<Void>
     }
     
     struct Output {
         let error: Driver<PasscodeError?>
+        let isEnableBiometric: Driver<Bool>
     }
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
         let errorSubject = BehaviorSubject<PasscodeError?>(value: nil)
+        let isEnableBiometricSubject = PublishSubject<Bool>()
         
         input.passcodeTrigger
             .drive(onNext: { passcode in
@@ -79,7 +84,33 @@ extension PasscodeViewModel: ViewModel {
             })
             .disposed(by: disposeBag)
         
+        input.loadTrigger
+            .drive(onNext: { _ in
+                let isOn = LAContext().isPremissionBiometric && (AppSettings.passcodeEnableFaceId || AppSettings.passcodeEnableTouchId)
+                isEnableBiometricSubject.onNext(isOn)
+                if !LAContext().isPremissionBiometric {
+                    AppSettings.passcodeEnableFaceId = false
+                    AppSettings.passcodeEnableTouchId = false
+                }
+            })
+            .disposed(by: disposeBag)
         
-        return Output(error: errorSubject.asDriverOnErrorJustComplete())
+        input.unlockWithBiometric
+            .drive(onNext: { _ in
+                switch mode {
+                case .unlock:
+                    navigator.toMain()
+                case .verify:
+                    navigator.dismiss()
+                default:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        return Output(
+            error: errorSubject.asDriverOnErrorJustComplete(),
+            isEnableBiometric: isEnableBiometricSubject.asDriverOnErrorJustComplete()
+        )
     }
 }
