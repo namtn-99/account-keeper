@@ -18,6 +18,8 @@ final class SettingsTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var actionImageView: UIImageView!
     @IBOutlet weak var switchView: UIView!
     
+    var didSelectedSwitch: ((Bool) -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -43,11 +45,17 @@ final class SettingsTableViewCell: UITableViewCell, NibReusable {
             actionView.isHidden = true
             switchView.isHidden = false
             actionSwitch.isOn = isOn
+            actionSwitch.addTarget(self, action: #selector(onSettingSwitchValueChanged), for: .valueChanged)
         case .info:
             switchView.isHidden = true
             actionView.isHidden = true
         default:
             break
         }
+    }
+    
+    @objc
+    private func onSettingSwitchValueChanged(sender: UISwitch) {
+        didSelectedSwitch?(sender.isOn)
     }
 }

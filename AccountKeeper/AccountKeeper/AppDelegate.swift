@@ -32,12 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let blurEffect = UIBlurEffect(style: .regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = window!.frame
-        blurEffectView.tag = 1
+        blurEffectView.tag = 11
         self.window?.addSubview(blurEffectView)
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        self.window?.viewWithTag(1)?.removeFromSuperview()
+        self.window?.viewWithTag(11)?.removeFromSuperview()
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -47,6 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func presentPasscode() {
         let passcodeVC: PasscodeViewController = assembler.resolve(navigationController: UINavigationController(),
                                                                    mode: .verify)
+        if WindowManager.shared.rootViewController != nil {
+            WindowManager.shared.rootViewController = nil
+        }
         WindowManager.shared.rootViewController = passcodeVC
         WindowManager.shared.isHidden = false
     }

@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import Reusable
 import Then
+import LocalAuthentication
 
 enum PasscodeMode {
     case new
@@ -34,9 +35,12 @@ final class PasscodeViewController: UIViewController, Bindable {
     var viewModel: PasscodeViewModel!
     var disposeBag = DisposeBag()
     
-    var passcode = ""
+    private var passcode = ""
+    private var isShowBiometric = false
     
     private let passcodeTrigger = PublishSubject<String>()
+    private let loadTrigger = PublishSubject<Void>()
+    private let biometricTrigger = PublishSubject<Void>()
     
     // MARK: - Life Cycle
     
@@ -47,7 +51,9 @@ final class PasscodeViewController: UIViewController, Bindable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.setNavigationBarHidden(viewModel.mode == .unlock, animated: animated)
+        UINavigationBar.appearance().barTintColor = Asset.hex27374D.color
+        loadTrigger.onNext(())
     }
     
     deinit {
@@ -80,8 +86,22 @@ final class PasscodeViewController: UIViewController, Bindable {
         }
     }
     
+    @IBAction func handleBiometricButton(_ sender: UIButton) {
+        startAuthentication()
+    }
+    
     private func configView() {
         errorTitleLabel.text = ""
+        biometricButton.isHidden = true
+        switch LAContext().biometricType {
+        case .faceID:
+            biometricButton.setImage(Asset.icFaceID.image, for: .normal)
+        case .touchID:
+            biometricButton.setImage(Asset.icTouchID.image, for: .normal)
+        default:
+            break
+        }
+        
         switch viewModel.mode {
         case .new:
             titleLabel.text = L10n.Passcode.Title.new
@@ -92,9 +112,11 @@ final class PasscodeViewController: UIViewController, Bindable {
         case .confirmNew:
             titleLabel.text = L10n.Passcode.Title.verify
         case .verify:
-            titleLabel.text = L10n.Passcode.Title.verify
+            titleLabel.text = L10n.Passcode.title
+            isShowBiometric = true
         case .unlock:
             titleLabel.text = L10n.Passcode.title
+            isShowBiometric = true
         }
     }
     
@@ -103,7 +125,11 @@ final class PasscodeViewController: UIViewController, Bindable {
     }
     
     func bindViewModel() {
-        let input = PasscodeViewModel.Input(passcodeTrigger: passcodeTrigger.asDriverOnErrorJustComplete())
+        let input = PasscodeViewModel.Input(
+            passcodeTrigger: passcodeTrigger.asDriverOnErrorJustComplete(),
+            loadTrigger: loadTrigger.asDriverOnErrorJustComplete(),
+            unlockWithBiometric: biometricTrigger.asDriverOnErrorJustComplete()
+        )
         let output = viewModel.transform(input, disposeBag: disposeBag)
         
         output.error
@@ -117,6 +143,19 @@ final class PasscodeViewController: UIViewController, Bindable {
                 }
             })
             .disposed(by: disposeBag)
+        
+        output.isEnableBiometric
+            .drive(onNext: { [weak self] isOn in
+                self?.biometricButton.isHidden = !(isOn && (self?.isShowBiometric ?? false))
+                if isOn
+                    && LAContext().isPremissionBiometric
+                    && (self?.viewModel.mode == .verify || self?.viewModel.mode == .unlock) {
+                    self?.startAuthentication()
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        loadTrigger.onNext(())
     }
 }
 
@@ -138,4 +177,37 @@ extension PasscodeViewController {
         animation.values = [-15, 15, -12, 12, -10, 10, -5, 5, 0]
         inputStackView.layer.add(animation, forKey: "shake")
     }
+    
+    private func startAuthentication() {
+        let context = LAContext()
+        let reason = "Unlock"
+        var error: NSError?
+        
+        let permissions = context.canEvaluatePolicy(
+            .deviceOwnerAuthentication,
+            error: &error
+        )
+
+        guard permissions else {
+            return
+        }
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
+                                     localizedReason: reason) { success, evaluateError in
+                DispatchQueue.main.async {
+                    switch success {
+                    case true:
+                        if context.evaluatedPolicyDomainState == nil {
+                            print("Biometric wrong")
+                        } else {
+                            self.biometricTrigger.onNext(())
+                        }
+                    case false:
+                        print("Biometric false")
+                    }
+                }
+            }
+        }
+    }
+    
 }
