@@ -99,6 +99,9 @@
                                         <state key="normal">
                                             <imageReference key="image" image="plus.circle" catalog="system" symbolScale="large"/>
                                         </state>
+                                        <connections>
+                                            <action selector="handleAddButon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wc0-yg-mEc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cag-HJ-6nh">
                                         <rect key="frame" x="16" y="6" width="30" height="30"/>

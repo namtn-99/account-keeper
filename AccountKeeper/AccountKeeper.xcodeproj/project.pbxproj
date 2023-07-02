@@ -29,6 +29,8 @@
 		CE2B0E252A4ACF8300C0099B /* LAContext+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E242A4ACF8300C0099B /* LAContext+.swift */; };
 		CE2B0E272A4AE0D200C0099B /* PasscodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E262A4AE0D200C0099B /* PasscodEntity.swift */; };
 		CE2B0E2B2A4DF6C100C0099B /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E2A2A4DF6C100C0099B /* WindowManager.swift */; };
+		CE2B0E302A51688E00C0099B /* SelectionPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E2F2A51688E00C0099B /* SelectionPopoverViewController.swift */; };
+		CE2B0E322A51689800C0099B /* SelectionPopover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2B0E312A51689800C0099B /* SelectionPopover.storyboard */; };
 		CE39BCB22A43603D00BCF90D /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BCB12A43603D00BCF90D /* KeychainManager.swift */; };
 		CE39BCB42A449C3E00BCF90D /* Realm+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BCB32A449C3E00BCF90D /* Realm+.swift */; };
 		CE4398902A46B80B00EEE16D /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43988F2A46B80B00EEE16D /* UIView+.swift */; };
@@ -106,6 +108,8 @@
 		CE2B0E242A4ACF8300C0099B /* LAContext+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LAContext+.swift"; sourceTree = "<group>"; };
 		CE2B0E262A4AE0D200C0099B /* PasscodEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodEntity.swift; sourceTree = "<group>"; };
 		CE2B0E2A2A4DF6C100C0099B /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		CE2B0E2F2A51688E00C0099B /* SelectionPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionPopoverViewController.swift; sourceTree = "<group>"; };
+		CE2B0E312A51689800C0099B /* SelectionPopover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectionPopover.storyboard; sourceTree = "<group>"; };
 		CE39BCB12A43603D00BCF90D /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		CE39BCB32A449C3E00BCF90D /* Realm+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+.swift"; sourceTree = "<group>"; };
 		CE43988F2A46B80B00EEE16D /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -231,6 +235,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		CE2B0E2E2A51683600C0099B /* SelectionPopover */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B0E2F2A51688E00C0099B /* SelectionPopoverViewController.swift */,
+				CE2B0E312A51689800C0099B /* SelectionPopover.storyboard */,
+			);
+			path = SelectionPopover;
+			sourceTree = "<group>";
+		};
 		CE39BCB02A43603200BCF90D /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +316,7 @@
 		CE7D39F42A3C7997008A97D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE2B0E2E2A51683600C0099B /* SelectionPopover */,
 				CE2B0E0A2A49991F00C0099B /* Settings */,
 				CE2B0DF62A4973CF00C0099B /* SideMenu */,
 				CE43989B2A4833FB00EEE16D /* AddAccount */,
@@ -537,6 +551,7 @@
 				CE60331C2A469FC9009333D8 /* AccountTableViewCell.xib in Resources */,
 				CE4398A72A48343F00EEE16D /* AddAccount.storyboard in Resources */,
 				CE43989A2A46C69300EEE16D /* AccountFooterView.xib in Resources */,
+				CE2B0E322A51689800C0099B /* SelectionPopover.storyboard in Resources */,
 				CE2B0DE92A495AB200C0099B /* Localizable.strings in Resources */,
 				CE2B0E1B2A499EC900C0099B /* MenuTableViewCell.xib in Resources */,
 				CE6033182A45E502009333D8 /* AccountSectionTableViewCell.xib in Resources */,
@@ -646,6 +661,7 @@
 				CE7D3A702A3EB468008A97D7 /* AppSettings.swift in Sources */,
 				CE4398A92A4882EF00EEE16D /* Constants.swift in Sources */,
 				CE39BCB42A449C3E00BCF90D /* Realm+.swift in Sources */,
+				CE2B0E302A51688E00C0099B /* SelectionPopoverViewController.swift in Sources */,
 				CE2B0E142A49992E00C0099B /* SettingsViewModel.swift in Sources */,
 				CE7D3A102A3CC553008A97D7 /* AppAssembler.swift in Sources */,
 				CE7D3A1D2A3CC58F008A97D7 /* MainViewController.swift in Sources */,
