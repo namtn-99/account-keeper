@@ -37,6 +37,7 @@ final class MainViewController: UIViewController, Bindable {
     var disposeBag = DisposeBag()
     
     private let toSettingsTrigger = PublishSubject<Void>()
+    private let toNewAccountTrigger = PublishSubject<Void>()
     
     var tableViewData: [CellData] = []
     
@@ -50,6 +51,23 @@ final class MainViewController: UIViewController, Bindable {
         super.viewDidLoad()
         configView()
         configTableView()
+    }
+    
+    @IBAction func handleAddButon(_ sender: UIButton) {
+        let frame = sender.frame
+        let position = CGRect(x: frame.origin.x, y: frame.origin.y + 130, width: frame.size.width, height: frame.size.height)
+        let vc: SelectionPopoverViewController = SelectionPopoverViewController.instantiate()
+        vc.delegate = self
+        vc.preferredContentSize = Constants.selectionPopoverSize
+        vc.modalPresentationStyle = .popover
+        
+        if let popoverVC = vc.popoverPresentationController {
+            popoverVC.permittedArrowDirections = .init(rawValue: 0)
+            popoverVC.sourceView = self.view
+            popoverVC.sourceRect = position
+            popoverVC.delegate = self
+            present(vc, animated: true, completion: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,10 +121,10 @@ final class MainViewController: UIViewController, Bindable {
     
     func bindViewModel() {
         let input = MainViewModel.Input(
-            toAddAccountTrigger: addButton.rx.tap.asDriver(),
+            toAddAccountTrigger: toNewAccountTrigger.asDriverOnErrorJustComplete(),
             toSettingsTrigger: toSettingsTrigger.asDriverOnErrorJustComplete()
         )
-        let output = viewModel.transform(input, disposeBag: disposeBag)
+        let _ = viewModel.transform(input, disposeBag: disposeBag)
     }
 }
 
@@ -274,5 +292,31 @@ extension MainViewController {
             self.view.layoutIfNeeded()
         }
         isOpenMenu = isShow
+    }
+}
+
+extension MainViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        
+    }
+    
+    func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        return true
+    }
+}
+
+extension MainViewController: SelectionPopoverViewControllerDelegate {
+    func didSelectedNewAccount() {
+        UIView.animate(withDuration: 0.1) {
+            self.toNewAccountTrigger.onNext(())
+        }
+    }
+    
+    func didSelectedNewTypeAccount() {
+        print("DidSlectionNewTypeAcout")
     }
 }

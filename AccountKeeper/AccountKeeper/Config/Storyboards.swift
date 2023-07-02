@@ -13,4 +13,5 @@ enum Storyboards {
     static let addAccount = UIStoryboard(name: "AddAccount", bundle: nil)
     static let sideMenu = UIStoryboard(name: "SideMenu", bundle: nil)
     static let settings = UIStoryboard(name: "Settings", bundle: nil)
+    static let selectionPopover = UIStoryboard(name: "SelectionPopover", bundle: nil)
 }

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Selection Popover View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SelectionPopoverViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SelectionPopoverViewController" customModule="AccountKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjN-gW-a3j">
+                                <rect key="frame" x="0.0" y="49.666666666666664" width="200" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="hQg-YB-q45"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEz-hr-Z4D">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="49.666666666666664"/>
+                                <color key="tintColor" name="D9D9D9"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="New account">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnK-KA-0h3">
+                                <rect key="frame" x="0.0" y="50.666666666666657" width="200" height="49.333333333333343"/>
+                                <color key="tintColor" name="D9D9D9"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="New type account">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FEz-hr-Z4D" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="3FU-jZ-3Yk"/>
+                            <constraint firstItem="BjN-gW-a3j" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="3lb-bZ-F1z"/>
+                            <constraint firstItem="JnK-KA-0h3" firstAttribute="top" secondItem="BjN-gW-a3j" secondAttribute="bottom" id="9Ti-ss-AWE"/>
+                            <constraint firstItem="FEz-hr-Z4D" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Ct4-tX-mKv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JnK-KA-0h3" secondAttribute="bottom" id="FhN-Bz-iVC"/>
+                            <constraint firstAttribute="trailing" secondItem="FEz-hr-Z4D" secondAttribute="trailing" id="K83-tX-8kE"/>
+                            <constraint firstAttribute="trailing" secondItem="BjN-gW-a3j" secondAttribute="trailing" id="V00-4Z-a52"/>
+                            <constraint firstItem="BjN-gW-a3j" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="liB-5I-Equ"/>
+                            <constraint firstAttribute="trailing" secondItem="JnK-KA-0h3" secondAttribute="trailing" id="mVt-0B-V3f"/>
+                            <constraint firstItem="BjN-gW-a3j" firstAttribute="top" secondItem="FEz-hr-Z4D" secondAttribute="bottom" id="nLu-ZQ-7My"/>
+                            <constraint firstItem="JnK-KA-0h3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ojS-05-U0Y"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="200" height="100"/>
+                    <connections>
+                        <outlet property="newAccountButton" destination="FEz-hr-Z4D" id="n2n-91-Uvr"/>
+                        <outlet property="newTypeAccountButton" destination="JnK-KA-0h3" id="IT1-AW-3qZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.92307692307691" y="3.5545023696682461"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="D9D9D9">
+            <color red="0.85100001096725464" green="0.85100001096725464" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
