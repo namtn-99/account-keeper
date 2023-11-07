@@ -35,6 +35,7 @@ final class SelectionPopoverViewController: UIViewController {
     
     private func setUpView() {
         newAccountButton.rx.tap
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 self?.dismiss(animated: false)
                 self?.delegate?.didSelectedNewAccount()
@@ -42,6 +43,7 @@ final class SelectionPopoverViewController: UIViewController {
             .disposed(by: disposeBag)
         
         newTypeAccountButton.rx.tap
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 self?.dismiss(animated: false)
                 self?.delegate?.didSelectedNewTypeAccount()

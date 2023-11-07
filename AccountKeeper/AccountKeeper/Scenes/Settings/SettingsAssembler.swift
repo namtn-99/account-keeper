@@ -12,7 +12,6 @@ protocol SettingsAssembler {
     func resolve(navigationController: UINavigationController) -> SettingsViewController
     func resolve(navigationController: UINavigationController) -> SettingsViewModel
     func resolve(navigationController: UINavigationController) -> SettingsNavigatorType
-    func resolve() -> SettingsUseCaseType
 }
 
 extension SettingsAssembler {
@@ -25,8 +24,7 @@ extension SettingsAssembler {
     
     func resolve(navigationController: UINavigationController) -> SettingsViewModel {
         return SettingsViewModel(
-            navigator: resolve(navigationController: navigationController),
-            useCase: resolve()
+            navigator: resolve(navigationController: navigationController)
         )
     }
 }
@@ -34,9 +32,5 @@ extension SettingsAssembler {
 extension SettingsAssembler where Self: DefaultAssembler {
     func resolve(navigationController: UINavigationController) -> SettingsNavigatorType {
         return SettingsNavigator(assembler: self, navigationController: navigationController)
-    }
-    
-    func resolve() -> SettingsUseCaseType {
-        return SettingsUseCase()
     }
 }

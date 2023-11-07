@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var disposeBag = DisposeBag()
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        IQKeyboardManager.shared().isEnabled = true
+        IQKeyboardManager.shared().shouldResignOnTouchOutside = true
+        
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         bindViewModel(window: window)
@@ -41,7 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        presentPasscode()
+        if AppSettings.passcodeEntity != nil {
+            presentPasscode()
+        }
     }
     
     private func presentPasscode() {

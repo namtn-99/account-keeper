@@ -6,6 +6,12 @@
   
 */
 
+// Common
+"photoGalary" = "Photo Galary";
+"camera" = "Camera";
+"placeholder.name" = "Name...";
+"save" = "Save";
+
 // Home
 "name" = "Name";
 "username" = "Username";
@@ -46,3 +52,9 @@
 "settings.popup.settings" = "Settings";
 "settings.popup.goToSettings" = "Go to settings";
 "settings.popup.requestPremission" = "You need permission to enable this function.";
+
+// New Account Type
+"newAccountType.title" = "New Account Type";
+"newAccountType.requestPremission.camera.title" = "Request camera access";
+"newAccountType.requestPremission.camera.message" = "To take a photo, allow access to your camera.";
+

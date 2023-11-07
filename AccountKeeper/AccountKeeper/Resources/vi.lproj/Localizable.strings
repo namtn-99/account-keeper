@@ -6,6 +6,13 @@
   
 */
 
+
+// Common
+"photoGalary" = "Bộ sưu tập";
+"camera" = "Camera";
+"placeholder.name" = "Tên...";
+"save" = "Lưu";
+
 // Home
 "name" = "Tên";
 "username" = "Tài khoản";
@@ -46,3 +53,8 @@
 "settings.popup.settings" = "Cài đặt";
 "settings.popup.goToSettings" = "Đi tới cài đặt";
 "settings.popup.requestPremission" = "Bạn cần cấp quyển để có thể bật chức năng này.";
+
+// New Account Type
+"newAccountType.title" = "Loại tài khoản mới";
+"newAccountType.requestPremission.camera.title" = "Yêu cầu quyền truy cập máy ảnh";
+"newAccountType.requestPremission.camera.message" = "Để chụp ảnh, hãy cho phép truy cập máy ảnh của bạn.";

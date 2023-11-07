@@ -25,6 +25,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HLE-dL-IQJ">
                                         <rect key="frame" x="16" y="23" width="30" height="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="HLE-dL-IQJ" secondAttribute="height" multiplier="1:1" id="J6g-Pj-Pzn"/>
                                             <constraint firstAttribute="height" constant="30" id="vCg-2Z-c1Y"/>

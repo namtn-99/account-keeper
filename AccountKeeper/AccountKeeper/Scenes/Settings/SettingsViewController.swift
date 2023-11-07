@@ -185,26 +185,8 @@ extension SettingsViewController {
                 self.biometricSettingsTrigger.onNext(true)
             }
         } else {
-            showNavigateToSettings()
+            showNavigateToSettings(message: L10n.Settings.Popup.requestPremission)
             settingsTableView.reloadData()
         }
-    }
-    
-    private func showNavigateToSettings() {
-        let alertController = UIAlertController(title: L10n.Settings.Popup.goToSettings,
-                                                message: L10n.Settings.Popup.requestPremission,
-                                                preferredStyle: .alert)
-        let settingsAction = UIAlertAction(title: L10n.Settings.Popup.settings, style: .default) { _ in
-            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                return
-            }
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl, completionHandler: nil)
-            }
-        }
-        alertController.addAction(settingsAction)
-        let cancelAction = UIAlertAction(title: L10n.Settings.Popup.cancel, style: .default, handler: nil)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true, completion: nil)
     }
 }

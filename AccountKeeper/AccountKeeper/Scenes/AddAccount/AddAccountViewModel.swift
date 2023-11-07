@@ -16,7 +16,7 @@ struct AddAccountViewModel {
 // MARK: - ViewModel
 extension AddAccountViewModel: ViewModel {
     struct Input {
-        
+        let loadTrigger: Driver<Void>
     }
     
     struct Output {
@@ -24,7 +24,11 @@ extension AddAccountViewModel: ViewModel {
     }
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
-        let output = Output()
-        return output
+        input.loadTrigger
+            .drive(onNext: { _ in
+            })
+            .disposed(by: disposeBag)
+        
+        return Output()
     }
 }

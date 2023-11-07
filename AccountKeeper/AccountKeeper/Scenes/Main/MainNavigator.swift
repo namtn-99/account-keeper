@@ -10,6 +10,7 @@ import UIKit
 protocol MainNavigatorType {
     func toAddAccount()
     func toSettings()
+    func toAccountType()
 }
 
 struct MainNavigator: MainNavigatorType {
@@ -24,6 +25,14 @@ struct MainNavigator: MainNavigatorType {
     func toSettings() {
         let nav = UINavigationController()
         let vc: SettingsViewController = assembler.resolve(navigationController: nav)
+        nav.viewControllers.append(vc)
+        nav.modalPresentationStyle = .fullScreen
+        navigationController.viewControllers.first?.present(nav, animated: true)
+    }
+    
+    func toAccountType() {
+        let nav = UINavigationController()
+        let vc: AccountTypeListViewController = assembler.resolve(navigationController: nav)
         nav.viewControllers.append(vc)
         nav.modalPresentationStyle = .fullScreen
         navigationController.viewControllers.first?.present(nav, animated: true)

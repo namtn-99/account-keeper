@@ -38,6 +38,8 @@ final class MainViewController: UIViewController, Bindable {
     
     private let toSettingsTrigger = PublishSubject<Void>()
     private let toNewAccountTrigger = PublishSubject<Void>()
+    private let toNewAccountTypeTrigger = PublishSubject<Void>()
+    private let toAccountType = PublishSubject<Void>()
     
     var tableViewData: [CellData] = []
     
@@ -55,7 +57,7 @@ final class MainViewController: UIViewController, Bindable {
     
     @IBAction func handleAddButon(_ sender: UIButton) {
         let frame = sender.frame
-        let position = CGRect(x: frame.origin.x, y: frame.origin.y + 130, width: frame.size.width, height: frame.size.height)
+        let position = CGRect(x: frame.origin.x, y: frame.origin.y + 120, width: frame.size.width, height: frame.size.height)
         let vc: SelectionPopoverViewController = SelectionPopoverViewController.instantiate()
         vc.delegate = self
         vc.preferredContentSize = Constants.selectionPopoverSize
@@ -122,7 +124,8 @@ final class MainViewController: UIViewController, Bindable {
     func bindViewModel() {
         let input = MainViewModel.Input(
             toAddAccountTrigger: toNewAccountTrigger.asDriverOnErrorJustComplete(),
-            toSettingsTrigger: toSettingsTrigger.asDriverOnErrorJustComplete()
+            toSettingsTrigger: toSettingsTrigger.asDriverOnErrorJustComplete(),
+            toAccountTypeTrigger: toAccountType.asDriverOnErrorJustComplete()
         )
         let _ = viewModel.transform(input, disposeBag: disposeBag)
     }
@@ -224,10 +227,12 @@ extension MainViewController: SideMenuViewControllerDelegate {
     }
     
     func didSelectedItem(item: MenuCellType) {
+        displaySideMenu(isShow: false)
         switch item {
         case .settings:
-            displaySideMenu(isShow: false)
             toSettingsTrigger.onNext(())
+        case .accountType:
+            toAccountType.onNext(())
         default:
             break
         }
@@ -311,12 +316,10 @@ extension MainViewController: UIPopoverPresentationControllerDelegate {
 
 extension MainViewController: SelectionPopoverViewControllerDelegate {
     func didSelectedNewAccount() {
-        UIView.animate(withDuration: 0.1) {
-            self.toNewAccountTrigger.onNext(())
-        }
+        self.toNewAccountTrigger.onNext(())
     }
     
     func didSelectedNewTypeAccount() {
-        print("DidSlectionNewTypeAcout")
+        self.toNewAccountTypeTrigger.onNext(())
     }
 }

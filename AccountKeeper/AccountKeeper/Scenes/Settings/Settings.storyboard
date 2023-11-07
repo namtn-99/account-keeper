@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-DY-PBb">
-                                <rect key="frame" x="0.0" y="47" width="390" height="42"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94U-Re-4W6">
-                                        <rect key="frame" x="16" y="3.6666666666666643" width="35" height="35"/>
+                                        <rect key="frame" x="16" y="14.666666666666664" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="94U-Re-4W6" secondAttribute="height" multiplier="1:1" id="L9t-xc-6An"/>
                                             <constraint firstAttribute="width" constant="35" id="QOS-MO-8Ab"/>
@@ -33,7 +33,7 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhZ-kz-bCQ">
-                                        <rect key="frame" x="160.66666666666666" y="10.666666666666664" width="68.666666666666657" height="21"/>
+                                        <rect key="frame" x="160.66666666666666" y="21.666666666666671" width="68.666666666666657" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                                 </subviews>
                                 <color key="backgroundColor" name="hex27374D"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="Ae4-t7-N8V"/>
+                                    <constraint firstAttribute="height" constant="64" id="Ae4-t7-N8V"/>
                                     <constraint firstItem="uhZ-kz-bCQ" firstAttribute="centerX" secondItem="VCu-DY-PBb" secondAttribute="centerX" id="Ggb-ne-CfI"/>
                                     <constraint firstItem="uhZ-kz-bCQ" firstAttribute="centerY" secondItem="VCu-DY-PBb" secondAttribute="centerY" id="IeG-kX-kon"/>
                                     <constraint firstItem="94U-Re-4W6" firstAttribute="centerY" secondItem="VCu-DY-PBb" secondAttribute="centerY" id="TD6-8Y-FbO"/>
@@ -53,7 +53,7 @@
                                 <color key="backgroundColor" name="hex27374D"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5d5-68-iwd">
-                                <rect key="frame" x="0.0" y="89" width="390" height="755"/>
+                                <rect key="frame" x="0.0" y="111" width="390" height="733"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>

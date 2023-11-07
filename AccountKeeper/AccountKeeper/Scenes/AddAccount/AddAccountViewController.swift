@@ -43,7 +43,7 @@ final class AddAccountViewController: UIViewController, Bindable {
     }
     
     func bindViewModel() {
-        let input = AddAccountViewModel.Input()
+        let input = AddAccountViewModel.Input(loadTrigger: Driver.just(()))
         let output = viewModel.transform(input, disposeBag: disposeBag)
     }
 }

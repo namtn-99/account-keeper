@@ -11,7 +11,7 @@ import LocalAuthentication
 
 struct SettingsViewModel {
     let navigator: SettingsNavigatorType
-    let useCase: SettingsUseCaseType
+    @Injected var useCase: SettingsUseCaseType
 }
 
 // MARK: - ViewModel

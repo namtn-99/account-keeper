@@ -11,13 +11,13 @@ import Realm
 import RealmSwift
 
 class Account: Object {
-    @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var username: String
     @Persisted var password: String
     @Persisted var qrCode: String?
-    var accountType: AccountType
+    @Persisted var accountType: AccountType?
     
-    init(_id: String, username: String, password: String, qrCode: String? = nil, accountType: AccountType) {
+    convenience init(_id: String, username: String, password: String, qrCode: String? = nil, accountType: AccountType? = nil) {
+        self.init()
         self.username = username
         self.password = password
         self.qrCode = qrCode
@@ -26,7 +26,13 @@ class Account: Object {
 }
 
 class AccountType: Object {
-    @Persisted(primaryKey: true) var _id: String
     @Persisted var name: String
     @Persisted var image: String
+    @Persisted var accounts = List<Account>()
+    
+    convenience init(_id: String, name: String, image: String) {
+        self.init()
+        self.name = name
+        self.image = image
+    }
 }

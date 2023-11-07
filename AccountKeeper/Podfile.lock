@@ -1,11 +1,7 @@
 PODS:
+  - IQKeyboardManager (6.5.11)
   - MagicalRecord (2.3.0)
   - MBProgressHUD (1.2.0)
-  - Realm (10.39.1):
-    - Realm/Headers (= 10.39.1)
-  - Realm/Headers (10.39.1)
-  - RealmSwift (10.39.1):
-    - Realm (= 10.39.1)
   - Reusable (4.1.2):
     - Reusable/Storyboard (= 4.1.2)
     - Reusable/View (= 4.1.2)
@@ -24,9 +20,9 @@ PODS:
   - Then (2.7.0)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - MagicalRecord (= 2.3.0)
   - MBProgressHUD (~> 1.2)
-  - RealmSwift (~> 10)
   - Reusable (~> 4.1)
   - RxCocoa
   - RxSwift
@@ -36,10 +32,9 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManager
     - MagicalRecord
     - MBProgressHUD
-    - Realm
-    - RealmSwift
     - Reusable
     - RxCocoa
     - RxRelay
@@ -49,10 +44,9 @@ SPEC REPOS:
     - Then
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: ef43ce1ba1e5aaf4adf222c0a46f39761f246879
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  Realm: 1f3157edf145f4d9036765ab550c8cb18f62b700
-  RealmSwift: 8a69a1cb788cd5865966f49667b130567e07bceb
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -61,6 +55,6 @@ SPEC CHECKSUMS:
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: e2f49d9bd3b927f97b02cfdf16db6f5563b98dcb
+PODFILE CHECKSUM: 6d5d39c7b45a9febafa4a9b1e196a5a41d0bfeef
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1
