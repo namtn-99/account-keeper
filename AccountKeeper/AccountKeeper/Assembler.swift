@@ -10,7 +10,9 @@ protocol Assembler: AnyObject,
                     MainAssembler,
                     PasscodeAssembler,
                     AddAccountAssembler,
-                    SettingsAssembler {
+                    SettingsAssembler,
+                    AddAccountTypeAssembler,
+                    AccountTypeListAssembler {
 }
 
 final class DefaultAssembler: Assembler {}

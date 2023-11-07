@@ -30,6 +30,7 @@ final class SideMenuViewController: UIViewController {
     
     private let menuItems: [MenuCellType] = [
         .support,
+        .accountType,
         .settings
     ]
     

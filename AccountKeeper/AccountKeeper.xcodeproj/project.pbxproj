@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C91CF7122A2A2BBCDD218FF /* Pods_AccountKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97662E33E0AF42F98A937556 /* Pods_AccountKeeper.framework */; };
+		6808AEA3B5AA7CCD517D2EBC /* Pods_AccountKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5B6A031C1EF584516AA251 /* Pods_AccountKeeper.framework */; };
+		CE0816972A8BD91600EC85D2 /* AccountTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0816952A8BD91600EC85D2 /* AccountTypeTableViewCell.swift */; };
+		CE0816982A8BD91600EC85D2 /* AccountTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0816962A8BD91600EC85D2 /* AccountTypeTableViewCell.xib */; };
+		CE08169F2A8D302B00EC85D2 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08169E2A8D302B00EC85D2 /* Resolver.swift */; };
+		CE0816A22A8D313400EC85D2 /* Domain+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0816A12A8D313400EC85D2 /* Domain+Injection.swift */; };
+		CE0816A52A8D334100EC85D2 /* Data+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0816A42A8D334100EC85D2 /* Data+Injection.swift */; };
+		CE0816A72A8D336D00EC85D2 /* App+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0816A62A8D336D00EC85D2 /* App+Injection.swift */; };
+		CE0816AB2A8E03C600EC85D2 /* AccountTypeListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0816AA2A8E03C600EC85D2 /* AccountTypeListRepository.swift */; };
+		CE0816AD2A8E13BB00EC85D2 /* Results+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0816AC2A8E13BB00EC85D2 /* Results+.swift */; };
+		CE0816B02A8E211900EC85D2 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0816AF2A8E211900EC85D2 /* Property.swift */; };
 		CE2B0DE92A495AB200C0099B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE2B0DEB2A495AB200C0099B /* Localizable.strings */; };
 		CE2B0DEE2A4965CF00C0099B /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CE2B0DED2A4965CF00C0099B /* swiftgen.yml */; };
 		CE2B0DF32A4967B200C0099B /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0DF22A4967B200C0099B /* XCAssets+Generated.swift */; };
@@ -31,6 +40,12 @@
 		CE2B0E2B2A4DF6C100C0099B /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E2A2A4DF6C100C0099B /* WindowManager.swift */; };
 		CE2B0E302A51688E00C0099B /* SelectionPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E2F2A51688E00C0099B /* SelectionPopoverViewController.swift */; };
 		CE2B0E322A51689800C0099B /* SelectionPopover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2B0E312A51689800C0099B /* SelectionPopover.storyboard */; };
+		CE2B0E3D2A56DA9800C0099B /* AddAccountTypeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E382A56DA9800C0099B /* AddAccountTypeAssembler.swift */; };
+		CE2B0E3E2A56DA9800C0099B /* AddAccountTypeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E392A56DA9800C0099B /* AddAccountTypeNavigator.swift */; };
+		CE2B0E3F2A56DA9800C0099B /* AddAccountTypeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E3A2A56DA9800C0099B /* AddAccountTypeUseCase.swift */; };
+		CE2B0E402A56DA9800C0099B /* AddAccountTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E3B2A56DA9800C0099B /* AddAccountTypeViewController.swift */; };
+		CE2B0E412A56DA9800C0099B /* AddAccountTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B0E3C2A56DA9800C0099B /* AddAccountTypeViewModel.swift */; };
+		CE2B0E432A56DAA100C0099B /* AddAccountType.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2B0E422A56DAA100C0099B /* AddAccountType.storyboard */; };
 		CE39BCB22A43603D00BCF90D /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BCB12A43603D00BCF90D /* KeychainManager.swift */; };
 		CE39BCB42A449C3E00BCF90D /* Realm+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BCB32A449C3E00BCF90D /* Realm+.swift */; };
 		CE4398902A46B80B00EEE16D /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43988F2A46B80B00EEE16D /* UIView+.swift */; };
@@ -45,10 +60,14 @@
 		CE4398A72A48343F00EEE16D /* AddAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4398A62A48343F00EEE16D /* AddAccount.storyboard */; };
 		CE4398A92A4882EF00EEE16D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4398A82A4882EF00EEE16D /* Constants.swift */; };
 		CE4398AB2A48922300EEE16D /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4398AA2A48922300EEE16D /* ObservableType+.swift */; };
+		CE4EA8992AF9E44B00502216 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE4EA8982AF9E44B00502216 /* Realm */; };
+		CE4EA89B2AF9E44B00502216 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4EA89A2AF9E44B00502216 /* RealmSwift */; };
 		CE6033172A45E502009333D8 /* AccountSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6033152A45E502009333D8 /* AccountSectionTableViewCell.swift */; };
 		CE6033182A45E502009333D8 /* AccountSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6033162A45E502009333D8 /* AccountSectionTableViewCell.xib */; };
 		CE60331B2A469FC9009333D8 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6033192A469FC9009333D8 /* AccountTableViewCell.swift */; };
 		CE60331C2A469FC9009333D8 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE60331A2A469FC9009333D8 /* AccountTableViewCell.xib */; };
+		CE625D0E2A5DC2E400DBDFCA /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE625D0D2A5DC2E400DBDFCA /* URL+.swift */; };
+		CE625D132A6BD94500DBDFCA /* AddAccountTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE625D122A6BD94500DBDFCA /* AddAccountTypeRepository.swift */; };
 		CE7D39E12A3C7657008A97D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D39E02A3C7657008A97D7 /* AppDelegate.swift */; };
 		CE7D39E82A3C7657008A97D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7D39E62A3C7657008A97D7 /* Main.storyboard */; };
 		CE7D39EA2A3C7659008A97D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7D39E92A3C7659008A97D7 /* Assets.xcassets */; };
@@ -79,11 +98,26 @@
 		CE7D3A722A3ED256008A97D7 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A712A3ED256008A97D7 /* Storage.swift */; };
 		CE7D3A742A3EE4E3008A97D7 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A732A3EE4E3008A97D7 /* RealmService.swift */; };
 		CE7D3A762A3EE94B008A97D7 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D3A752A3EE94B008A97D7 /* Account.swift */; };
+		CE97E3272A88E4EE0088CBD8 /* AccountTypeListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97E3222A88E4EE0088CBD8 /* AccountTypeListAssembler.swift */; };
+		CE97E3282A88E4EE0088CBD8 /* AccountTypeListNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97E3232A88E4EE0088CBD8 /* AccountTypeListNavigator.swift */; };
+		CE97E3292A88E4EE0088CBD8 /* AccountTypeListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97E3242A88E4EE0088CBD8 /* AccountTypeListUseCase.swift */; };
+		CE97E32A2A88E4EE0088CBD8 /* AccountTypeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97E3252A88E4EE0088CBD8 /* AccountTypeListViewController.swift */; };
+		CE97E32B2A88E4EE0088CBD8 /* AccountTypeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97E3262A88E4EE0088CBD8 /* AccountTypeListViewModel.swift */; };
+		CE97E32D2A88E50E0088CBD8 /* AccountTypeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE97E32C2A88E50E0088CBD8 /* AccountTypeList.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		662B5510F2BA2A4B24725A9D /* Pods-AccountKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccountKeeper.release.xcconfig"; path = "Target Support Files/Pods-AccountKeeper/Pods-AccountKeeper.release.xcconfig"; sourceTree = "<group>"; };
-		97662E33E0AF42F98A937556 /* Pods_AccountKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccountKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F1203341CB515E5FB198EE9 /* Pods-AccountKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccountKeeper.debug.xcconfig"; path = "Target Support Files/Pods-AccountKeeper/Pods-AccountKeeper.debug.xcconfig"; sourceTree = "<group>"; };
+		A5A040A53AE21BE03261E7C6 /* Pods-AccountKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccountKeeper.release.xcconfig"; path = "Target Support Files/Pods-AccountKeeper/Pods-AccountKeeper.release.xcconfig"; sourceTree = "<group>"; };
+		CE0816952A8BD91600EC85D2 /* AccountTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeTableViewCell.swift; sourceTree = "<group>"; };
+		CE0816962A8BD91600EC85D2 /* AccountTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTypeTableViewCell.xib; sourceTree = "<group>"; };
+		CE08169E2A8D302B00EC85D2 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		CE0816A12A8D313400EC85D2 /* Domain+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain+Injection.swift"; sourceTree = "<group>"; };
+		CE0816A42A8D334100EC85D2 /* Data+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Injection.swift"; sourceTree = "<group>"; };
+		CE0816A62A8D336D00EC85D2 /* App+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Injection.swift"; sourceTree = "<group>"; };
+		CE0816AA2A8E03C600EC85D2 /* AccountTypeListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeListRepository.swift; sourceTree = "<group>"; };
+		CE0816AC2A8E13BB00EC85D2 /* Results+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Results+.swift"; sourceTree = "<group>"; };
+		CE0816AF2A8E211900EC85D2 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		CE2B0DE72A495A9000C0099B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CE2B0DE82A495A9000C0099B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
 		CE2B0DEA2A495AB200C0099B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -110,6 +144,12 @@
 		CE2B0E2A2A4DF6C100C0099B /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		CE2B0E2F2A51688E00C0099B /* SelectionPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionPopoverViewController.swift; sourceTree = "<group>"; };
 		CE2B0E312A51689800C0099B /* SelectionPopover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectionPopover.storyboard; sourceTree = "<group>"; };
+		CE2B0E382A56DA9800C0099B /* AddAccountTypeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountTypeAssembler.swift; sourceTree = "<group>"; };
+		CE2B0E392A56DA9800C0099B /* AddAccountTypeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountTypeNavigator.swift; sourceTree = "<group>"; };
+		CE2B0E3A2A56DA9800C0099B /* AddAccountTypeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountTypeUseCase.swift; sourceTree = "<group>"; };
+		CE2B0E3B2A56DA9800C0099B /* AddAccountTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountTypeViewController.swift; sourceTree = "<group>"; };
+		CE2B0E3C2A56DA9800C0099B /* AddAccountTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountTypeViewModel.swift; sourceTree = "<group>"; };
+		CE2B0E422A56DAA100C0099B /* AddAccountType.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddAccountType.storyboard; sourceTree = "<group>"; };
 		CE39BCB12A43603D00BCF90D /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		CE39BCB32A449C3E00BCF90D /* Realm+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+.swift"; sourceTree = "<group>"; };
 		CE43988F2A46B80B00EEE16D /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -128,6 +168,8 @@
 		CE6033162A45E502009333D8 /* AccountSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSectionTableViewCell.xib; sourceTree = "<group>"; };
 		CE6033192A469FC9009333D8 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		CE60331A2A469FC9009333D8 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		CE625D0D2A5DC2E400DBDFCA /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
+		CE625D122A6BD94500DBDFCA /* AddAccountTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountTypeRepository.swift; sourceTree = "<group>"; };
 		CE7D39DD2A3C7657008A97D7 /* AccountKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7D39E02A3C7657008A97D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7D39E72A3C7657008A97D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,7 +202,13 @@
 		CE7D3A712A3ED256008A97D7 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		CE7D3A732A3EE4E3008A97D7 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		CE7D3A752A3EE94B008A97D7 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		FBC680A55D98D84F936A4B64 /* Pods-AccountKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccountKeeper.debug.xcconfig"; path = "Target Support Files/Pods-AccountKeeper/Pods-AccountKeeper.debug.xcconfig"; sourceTree = "<group>"; };
+		CE97E3222A88E4EE0088CBD8 /* AccountTypeListAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeListAssembler.swift; sourceTree = "<group>"; };
+		CE97E3232A88E4EE0088CBD8 /* AccountTypeListNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeListNavigator.swift; sourceTree = "<group>"; };
+		CE97E3242A88E4EE0088CBD8 /* AccountTypeListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeListUseCase.swift; sourceTree = "<group>"; };
+		CE97E3252A88E4EE0088CBD8 /* AccountTypeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeListViewController.swift; sourceTree = "<group>"; };
+		CE97E3262A88E4EE0088CBD8 /* AccountTypeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeListViewModel.swift; sourceTree = "<group>"; };
+		CE97E32C2A88E50E0088CBD8 /* AccountTypeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountTypeList.storyboard; sourceTree = "<group>"; };
+		CF5B6A031C1EF584516AA251 /* Pods_AccountKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccountKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +216,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C91CF7122A2A2BBCDD218FF /* Pods_AccountKeeper.framework in Frameworks */,
+				CE4EA89B2AF9E44B00502216 /* RealmSwift in Frameworks */,
+				CE4EA8992AF9E44B00502216 /* Realm in Frameworks */,
+				6808AEA3B5AA7CCD517D2EBC /* Pods_AccountKeeper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,10 +228,67 @@
 		256732EAEAACAE569BD86D55 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FBC680A55D98D84F936A4B64 /* Pods-AccountKeeper.debug.xcconfig */,
-				662B5510F2BA2A4B24725A9D /* Pods-AccountKeeper.release.xcconfig */,
+				6F1203341CB515E5FB198EE9 /* Pods-AccountKeeper.debug.xcconfig */,
+				A5A040A53AE21BE03261E7C6 /* Pods-AccountKeeper.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7121C4FF578FC791F6C495FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF5B6A031C1EF584516AA251 /* Pods_AccountKeeper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE0816942A8BD8EE00EC85D2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE0816952A8BD91600EC85D2 /* AccountTypeTableViewCell.swift */,
+				CE0816962A8BD91600EC85D2 /* AccountTypeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE08169C2A8D301A00EC85D2 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				CE08169D2A8D302100EC85D2 /* Resolver */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		CE08169D2A8D302100EC85D2 /* Resolver */ = {
+			isa = PBXGroup;
+			children = (
+				CE08169E2A8D302B00EC85D2 /* Resolver.swift */,
+			);
+			path = Resolver;
+			sourceTree = "<group>";
+		};
+		CE0816A02A8D312200EC85D2 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CE0816A12A8D313400EC85D2 /* Domain+Injection.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		CE0816A32A8D333500EC85D2 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CE0816A42A8D334100EC85D2 /* Data+Injection.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		CE0816AE2A8E210D00EC85D2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CE0816AF2A8E211900EC85D2 /* Property.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		CE2B0DF12A49675800C0099B /* Generated */ = {
@@ -244,6 +351,19 @@
 			path = SelectionPopover;
 			sourceTree = "<group>";
 		};
+		CE2B0E372A56DA8800C0099B /* AddAccountType */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B0E382A56DA9800C0099B /* AddAccountTypeAssembler.swift */,
+				CE2B0E392A56DA9800C0099B /* AddAccountTypeNavigator.swift */,
+				CE2B0E3A2A56DA9800C0099B /* AddAccountTypeUseCase.swift */,
+				CE2B0E3C2A56DA9800C0099B /* AddAccountTypeViewModel.swift */,
+				CE2B0E3B2A56DA9800C0099B /* AddAccountTypeViewController.swift */,
+				CE2B0E422A56DAA100C0099B /* AddAccountType.storyboard */,
+			);
+			path = AddAccountType;
+			sourceTree = "<group>";
+		};
 		CE39BCB02A43603200BCF90D /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,13 +398,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		CE625D112A6BD92200DBDFCA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				CE625D122A6BD94500DBDFCA /* AddAccountTypeRepository.swift */,
+				CE0816AA2A8E03C600EC85D2 /* AccountTypeListRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		CE7D39D42A3C7657008A97D7 = {
 			isa = PBXGroup;
 			children = (
 				CE7D39DF2A3C7657008A97D7 /* AccountKeeper */,
 				CE7D39DE2A3C7657008A97D7 /* Products */,
 				256732EAEAACAE569BD86D55 /* Pods */,
-				F9CDA45CB58EDBB932C3382E /* Frameworks */,
+				7121C4FF578FC791F6C495FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -299,6 +428,8 @@
 		CE7D39DF2A3C7657008A97D7 /* AccountKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				CE0816AE2A8E210D00EC85D2 /* Base */,
+				CE08169C2A8D301A00EC85D2 /* Libs */,
 				CE2B0DED2A4965CF00C0099B /* swiftgen.yml */,
 				CE2B0DF12A49675800C0099B /* Generated */,
 				CE7D39E02A3C7657008A97D7 /* AppDelegate.swift */,
@@ -309,6 +440,7 @@
 				CE7D3A012A3CC152008A97D7 /* Domain */,
 				CE7D3A042A3CC17B008A97D7 /* Data */,
 				CE7D39F42A3C7997008A97D7 /* Scenes */,
+				CE0816A62A8D336D00EC85D2 /* App+Injection.swift */,
 			);
 			path = AccountKeeper;
 			sourceTree = "<group>";
@@ -316,6 +448,8 @@
 		CE7D39F42A3C7997008A97D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE97E3212A88D83B0088CBD8 /* AccountTypeList */,
+				CE2B0E372A56DA8800C0099B /* AddAccountType */,
 				CE2B0E2E2A51683600C0099B /* SelectionPopover */,
 				CE2B0E0A2A49991F00C0099B /* Settings */,
 				CE2B0DF62A4973CF00C0099B /* SideMenu */,
@@ -396,6 +530,8 @@
 				CE4398932A46C28400EEE16D /* UIColor+.swift */,
 				CE4398AA2A48922300EEE16D /* ObservableType+.swift */,
 				CE2B0E242A4ACF8300C0099B /* LAContext+.swift */,
+				CE625D0D2A5DC2E400DBDFCA /* URL+.swift */,
+				CE0816AC2A8E13BB00EC85D2 /* Results+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -403,6 +539,8 @@
 		CE7D3A012A3CC152008A97D7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CE0816A02A8D312200EC85D2 /* DI */,
+				CE625D112A6BD92200DBDFCA /* Repository */,
 				CE7D3A032A3CC162008A97D7 /* UseCases */,
 				CE7D3A022A3CC15D008A97D7 /* Entities */,
 			);
@@ -430,6 +568,7 @@
 		CE7D3A042A3CC17B008A97D7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CE0816A32A8D333500EC85D2 /* DI */,
 				CE39BCB02A43603200BCF90D /* Keychain */,
 				CE7D3A072A3CC1A1008A97D7 /* Realm */,
 				CE7D3A062A3CC196008A97D7 /* UserDefaults */,
@@ -473,12 +612,18 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		F9CDA45CB58EDBB932C3382E /* Frameworks */ = {
+		CE97E3212A88D83B0088CBD8 /* AccountTypeList */ = {
 			isa = PBXGroup;
 			children = (
-				97662E33E0AF42F98A937556 /* Pods_AccountKeeper.framework */,
+				CE0816942A8BD8EE00EC85D2 /* Cell */,
+				CE97E3222A88E4EE0088CBD8 /* AccountTypeListAssembler.swift */,
+				CE97E3232A88E4EE0088CBD8 /* AccountTypeListNavigator.swift */,
+				CE97E3242A88E4EE0088CBD8 /* AccountTypeListUseCase.swift */,
+				CE97E3252A88E4EE0088CBD8 /* AccountTypeListViewController.swift */,
+				CE97E3262A88E4EE0088CBD8 /* AccountTypeListViewModel.swift */,
+				CE97E32C2A88E50E0088CBD8 /* AccountTypeList.storyboard */,
 			);
-			name = Frameworks;
+			path = AccountTypeList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,7 +633,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE7D39F12A3C7659008A97D7 /* Build configuration list for PBXNativeTarget "AccountKeeper" */;
 			buildPhases = (
-				84A2302DAE8237C95E8E0C80 /* [CP] Check Pods Manifest.lock */,
+				D52AAD54DD0D024A0699C1CF /* [CP] Check Pods Manifest.lock */,
 				CE2B0DF02A49662100C0099B /* SwiftGen */,
 				CE7D39D92A3C7657008A97D7 /* Sources */,
 				CE7D39DA2A3C7657008A97D7 /* Frameworks */,
@@ -500,6 +645,10 @@
 			dependencies = (
 			);
 			name = AccountKeeper;
+			packageProductDependencies = (
+				CE4EA8982AF9E44B00502216 /* Realm */,
+				CE4EA89A2AF9E44B00502216 /* RealmSwift */,
+			);
 			productName = AccountKeeper;
 			productReference = CE7D39DD2A3C7657008A97D7 /* AccountKeeper.app */;
 			productType = "com.apple.product-type.application";
@@ -529,6 +678,9 @@
 				vi,
 			);
 			mainGroup = CE7D39D42A3C7657008A97D7;
+			packageReferences = (
+				CE4EA8972AF9E44B00502216 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+			);
 			productRefGroup = CE7D39DE2A3C7657008A97D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -550,7 +702,10 @@
 				CE2B0E162A49993700C0099B /* Settings.storyboard in Resources */,
 				CE60331C2A469FC9009333D8 /* AccountTableViewCell.xib in Resources */,
 				CE4398A72A48343F00EEE16D /* AddAccount.storyboard in Resources */,
+				CE97E32D2A88E50E0088CBD8 /* AccountTypeList.storyboard in Resources */,
 				CE43989A2A46C69300EEE16D /* AccountFooterView.xib in Resources */,
+				CE0816982A8BD91600EC85D2 /* AccountTypeTableViewCell.xib in Resources */,
+				CE2B0E432A56DAA100C0099B /* AddAccountType.storyboard in Resources */,
 				CE2B0E322A51689800C0099B /* SelectionPopover.storyboard in Resources */,
 				CE2B0DE92A495AB200C0099B /* Localizable.strings in Resources */,
 				CE2B0E1B2A499EC900C0099B /* MenuTableViewCell.xib in Resources */,
@@ -564,28 +719,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		84A2302DAE8237C95E8E0C80 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AccountKeeper-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CE2B0DF02A49662100C0099B /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -623,6 +756,28 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		D52AAD54DD0D024A0699C1CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AccountKeeper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -632,12 +787,22 @@
 			files = (
 				CE7D3A002A3CC0D2008A97D7 /* Utils.swift in Sources */,
 				CE2B0E102A49992E00C0099B /* SettingsAssembler.swift in Sources */,
+				CE0816B02A8E211900EC85D2 /* Property.swift in Sources */,
 				CE2B0E112A49992E00C0099B /* SettingsNavigator.swift in Sources */,
+				CE0816972A8BD91600EC85D2 /* AccountTypeTableViewCell.swift in Sources */,
+				CE97E3292A88E4EE0088CBD8 /* AccountTypeListUseCase.swift in Sources */,
+				CE08169F2A8D302B00EC85D2 /* Resolver.swift in Sources */,
 				CE7D3A762A3EE94B008A97D7 /* Account.swift in Sources */,
+				CE2B0E402A56DA9800C0099B /* AddAccountTypeViewController.swift in Sources */,
+				CE625D0E2A5DC2E400DBDFCA /* URL+.swift in Sources */,
 				CE4398A52A48340F00EEE16D /* AddAccountViewModel.swift in Sources */,
+				CE0816AD2A8E13BB00EC85D2 /* Results+.swift in Sources */,
 				CE7D3A692A3E104A008A97D7 /* PasscodeNavigator.swift in Sources */,
 				CE7D3A582A3E0B43008A97D7 /* UIApplication+.swift in Sources */,
+				CE97E3282A88E4EE0088CBD8 /* AccountTypeListNavigator.swift in Sources */,
 				CE7D3A1A2A3CC58F008A97D7 /* MainAssembler.swift in Sources */,
+				CE97E32A2A88E4EE0088CBD8 /* AccountTypeListViewController.swift in Sources */,
+				CE0816A52A8D334100EC85D2 /* Data+Injection.swift in Sources */,
 				CE2B0DF32A4967B200C0099B /* XCAssets+Generated.swift in Sources */,
 				CE7D3A1C2A3CC58F008A97D7 /* MainUseCase.swift in Sources */,
 				CE7D3A722A3ED256008A97D7 /* Storage.swift in Sources */,
@@ -645,14 +810,17 @@
 				CE7D3A112A3CC553008A97D7 /* AppNavigator.swift in Sources */,
 				CE7D3A1E2A3CC58F008A97D7 /* MainViewModel.swift in Sources */,
 				CE4398A32A48340F00EEE16D /* AddAccountUseCase.swift in Sources */,
+				CE97E32B2A88E4EE0088CBD8 /* AccountTypeListViewModel.swift in Sources */,
 				CE60331B2A469FC9009333D8 /* AccountTableViewCell.swift in Sources */,
 				CE2B0E232A4AC60800C0099B /* SettingsCellType.swift in Sources */,
 				CE7D39FC2A3CC07B008A97D7 /* Notifications.swift in Sources */,
 				CE4398902A46B80B00EEE16D /* UIView+.swift in Sources */,
+				CE2B0E3F2A56DA9800C0099B /* AddAccountTypeUseCase.swift in Sources */,
 				CE7D3A6E2A3E1075008A97D7 /* UIViewController+.swift in Sources */,
 				CE2B0E042A49764E00C0099B /* MenuCellType.swift in Sources */,
 				CE7D3A202A3CC5DF008A97D7 /* Storyboards.swift in Sources */,
 				CE7D3A682A3E104A008A97D7 /* PasscodeAssembler.swift in Sources */,
+				CE2B0E412A56DA9800C0099B /* AddAccountTypeViewModel.swift in Sources */,
 				CE39BCB22A43603D00BCF90D /* KeychainManager.swift in Sources */,
 				CE4398A42A48340F00EEE16D /* AddAccountViewController.swift in Sources */,
 				CE2B0E132A49992E00C0099B /* SettingsViewController.swift in Sources */,
@@ -660,9 +828,12 @@
 				CE2B0E252A4ACF8300C0099B /* LAContext+.swift in Sources */,
 				CE7D3A702A3EB468008A97D7 /* AppSettings.swift in Sources */,
 				CE4398A92A4882EF00EEE16D /* Constants.swift in Sources */,
+				CE97E3272A88E4EE0088CBD8 /* AccountTypeListAssembler.swift in Sources */,
 				CE39BCB42A449C3E00BCF90D /* Realm+.swift in Sources */,
 				CE2B0E302A51688E00C0099B /* SelectionPopoverViewController.swift in Sources */,
 				CE2B0E142A49992E00C0099B /* SettingsViewModel.swift in Sources */,
+				CE625D132A6BD94500DBDFCA /* AddAccountTypeRepository.swift in Sources */,
+				CE2B0E3E2A56DA9800C0099B /* AddAccountTypeNavigator.swift in Sources */,
 				CE7D3A102A3CC553008A97D7 /* AppAssembler.swift in Sources */,
 				CE7D3A1D2A3CC58F008A97D7 /* MainViewController.swift in Sources */,
 				CE4398A22A48340F00EEE16D /* AddAccountNavigator.swift in Sources */,
@@ -670,16 +841,20 @@
 				CE4398AB2A48922300EEE16D /* ObservableType+.swift in Sources */,
 				CE7D3A6B2A3E104A008A97D7 /* PasscodeViewController.swift in Sources */,
 				CE4398A12A48340F00EEE16D /* AddAccountAssembler.swift in Sources */,
+				CE0816A72A8D336D00EC85D2 /* App+Injection.swift in Sources */,
 				CE2B0E2B2A4DF6C100C0099B /* WindowManager.swift in Sources */,
 				CE7D3A6C2A3E104A008A97D7 /* PasscodeViewModel.swift in Sources */,
+				CE0816AB2A8E03C600EC85D2 /* AccountTypeListRepository.swift in Sources */,
 				CE4398942A46C28400EEE16D /* UIColor+.swift in Sources */,
 				CE2B0DF52A4969B300C0099B /* Strings+Generated.swift in Sources */,
 				CE7D39F92A3C79D5008A97D7 /* Assembler.swift in Sources */,
 				CE7D3A122A3CC553008A97D7 /* AppUseCase.swift in Sources */,
+				CE0816A22A8D313400EC85D2 /* Domain+Injection.swift in Sources */,
 				CE7D3A142A3CC553008A97D7 /* AppViewModel.swift in Sources */,
 				CE7D3A6A2A3E104A008A97D7 /* PasscodeUseCase.swift in Sources */,
 				CE7D3A0A2A3CC248008A97D7 /* ViewModel.swift in Sources */,
 				CE7D3A1B2A3CC58F008A97D7 /* MainNavigator.swift in Sources */,
+				CE2B0E3D2A56DA9800C0099B /* AddAccountTypeAssembler.swift in Sources */,
 				CE2B0E122A49992E00C0099B /* SettingsUseCase.swift in Sources */,
 				CE2B0DFF2A4973DE00C0099B /* SideMenuViewController.swift in Sources */,
 				CE7D39E12A3C7657008A97D7 /* AppDelegate.swift in Sources */,
@@ -840,15 +1015,16 @@
 		};
 		CE7D39F22A3C7659008A97D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBC680A55D98D84F936A4B64 /* Pods-AccountKeeper.debug.xcconfig */;
+			baseConfigurationReference = 6F1203341CB515E5FB198EE9 /* Pods-AccountKeeper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42BJ859V33;
+				DEVELOPMENT_TEAM = VZUZT46289;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AccountKeeper/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow to continue with Camera";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please allow to continue with FaceID of TouchID";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -871,15 +1047,16 @@
 		};
 		CE7D39F32A3C7659008A97D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 662B5510F2BA2A4B24725A9D /* Pods-AccountKeeper.release.xcconfig */;
+			baseConfigurationReference = A5A040A53AE21BE03261E7C6 /* Pods-AccountKeeper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42BJ859V33;
+				DEVELOPMENT_TEAM = VZUZT46289;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AccountKeeper/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow to continue with Camera";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please allow to continue with FaceID of TouchID";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -922,6 +1099,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE4EA8972AF9E44B00502216 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE4EA8982AF9E44B00502216 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE4EA8972AF9E44B00502216 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			productName = Realm;
+		};
+		CE4EA89A2AF9E44B00502216 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE4EA8972AF9E44B00502216 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE7D39D52A3C7657008A97D7 /* Project object */;
 }

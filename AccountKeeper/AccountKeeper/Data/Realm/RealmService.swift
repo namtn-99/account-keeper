@@ -50,35 +50,3 @@ class RealmService {
         }
     }
 }
-
-class Person: Object {
-    @Persisted var name: String
-    
-    init(name: String) {
-        self.name = name
-    }
-    
-    
-}
-class Imple {
-    func maina() {
-        let realm = try! Realm()
-        let person = Person(name: "A")
-        try! realm.write({
-            realm.add(person)
-        })
-        
-        @ThreadSafe var personRef = person
-        
-        DispatchQueue(label: "background").async {
-            let realm = try! Realm()
-            try! realm.write {
-                guard let person = personRef else {
-                    return
-                }
-                
-                person.name = "B"
-            }
-        }
-    }
-}
